@@ -4,5 +4,5 @@ from .models import BlogPost
 # Create your views here.
 def allnews(request):
     posts = BlogPost.objects
-    return render(request, 'teamnews/allnews.html', {'posts': posts})
+    return render(request, 'teamnews/about.html', {'posts': posts})
 

@@ -24,8 +24,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
     path('help', views.ctest),
-    path('teamnews/', include('teamnews.urls')),
+    path('about/', include('teamnews.urls')),
     path('gallery/', include('gallery.urls')),
-    path('committee/', include('committee.urls')),
+    path('contact/', include('committee.urls')),
     path('practicesandfixtures/', views.pandf, name='pandf')
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
