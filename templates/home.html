@@ -41,6 +41,10 @@
       .heading{color:grey}
       .heading:hover{color:rgba(51, 204, 204, 0.87)}
 
+      .navbar-custom { 
+            background-color: rgba(111, 245, 245, 0.788) 
+        } 
+
     </style>
 
 
@@ -51,8 +55,8 @@
     
     <header>
   
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light container marketing">
-    <a class="navbar-brand" href="{%url 'home'%}" >
+  <nav class="navbar navbar-expand-lg navbar-light bg-light container marketing">
+    <a class="navbar-brand" href="{%url 'home'%}" style='font-family:"Trebuchet MS", Helvetica, sans-serif' >
         <!-- <img href="https://cdn.emojidex.com/emoji/px128/fleur_de_lis.png?1422536840" width="30" height="30" alt=""> -->
         Cambridge University Eton Fives Club
     </a>
@@ -86,10 +90,10 @@
             <a class="nav-link" href="{%url 'pandf'%}">Practices & Fixtures</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="{%url 'gallery'%}">Gallery</a>
+            <a class="nav-link" href="{%url 'gallery'%}" >Gallery</a>
         </li>  
         <li class="nav-item">
-            <a class="nav-link" href="{%url 'committee'%}" style="color:rgb(111, 153, 158)"><strong>Contact us</strong></a>
+            <a class="nav-link" href="{%url 'committee'%}" style="color:rgba(51, 204, 204, 0.87)"><strong>Contact us</strong></a>
         </li>  
       </ul>
 
@@ -113,10 +117,9 @@
 
 </header>
 
-
 <main role="main">
     
-    <div id="myCarousel" class="carousel slide container marketing " data-ride="carousel">
+    <div id="myCarousel" class="carousel slide container " data-ride="carousel">
         <ol class="carousel-indicators">
           <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
           <li data-target="#myCarousel" data-slide-to="1"></li>
@@ -141,7 +144,7 @@
             <img src= "{%static 'cute.svg'%}" width = "100%" height = "100%">
             <div class="container">
               <div class="carousel-caption text-right">
-                <p>University Mixed Tournament</p>
+                <p>Universities Mixed Tournament</p>
               </div>
             </div>
           </div>
@@ -170,7 +173,7 @@
             <img src = "{%static 'viralha.svg'%}" height='100%' width='100%'>
             <div class="container">
               <div class="carousel-caption text-right">
-                <h1>Lol</h1>
+                <h1>hehe</h1>
                 <p>does it look better with captions? idek</p>
                 <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
               </div>
@@ -199,54 +202,133 @@
 
     <!-- Three columns of text below the carousel -->
     
+    
     <div class="row">
 
-        <div class="col-lg-4">
-            <p style="text-align: center;">
-                <img src="{%static 'omgcrop.jpg' %}" width='140' height='140' class='center'>
-            </p>
-            
-            <h2 style="text-align: center; color:rgba(51, 204, 204, 0.87)" >Eton Fives?</h2>
-            <p style="text-align: center;">Sqaush with your hands </br> (BUt in doubles only, and without the backwall, and replace with a step, a hole, a buttress, ledges, nicer people... ) </p>
-            <p style="text-align: center;"><a class="btn btn-secondary" href="#" role="button">Learn More &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
+      <div class="col-sm-4">
 
-    
-        <div class="col-lg-4">
-            <p style="text-align: center;">
-                <img src="{%static 'candidcrop.jpg' %}" width='140' height='140' class='center'>
-            </p>
-            
-            <h2 style="text-align: center;">Team news</h2>
-            <p style="text-align: center;">Catch up with what the team has been up to - will include links to match reports from the official EFA</p></br>
-            <p style="text-align: center;"><a class="btn btn-secondary" href="#" role="button">Blog posts &raquo;</a></p>
+        <p style="text-align: center;">
+          <img src="{%static 'omgcrop.jpg' %}" width='140' height='140' class='center'>
+        </p>
+        <h2 style="text-align: center; color:rgba(51, 204, 204, 0.87)" >Eton Fives?</h2>
+        <p style="text-align: center;">Sqaush with your hands </br> (BUt in doubles only, and without the backwall, and replace with a step, a hole, a buttress, ledges, nicer people... ) </p>
+
+        <p style="text-align: center;"><a class="btn btn-secondary" href="#" role="button">Learn More &raquo;</a></p>
+      
+      </div>
+
+      <div class="col-sm-4">      
         
-        </div><!-- /.col-lg-4 -->
+        <p style="text-align: center;">
+          <img src="{%static 'candidcrop.jpg' %}" width='140' height='140' class='center'>
+        </p>
+        <h2 style="text-align: center; color:rgba(51, 204, 204, 0.87)">Team news</h2>
+        <p style="text-align: center;">Catch up with what the team has been up to - will include links to match reports from the official EFA</p> 
 
-        <div class="col-lg-4">
-            <p style="text-align: center;">
-                <img src="{%static 'cambackcrop.jpg' %}" width='140' height='140' class='center'>
-            </p>
-            
-            <h2 style="text-align: center;">Join us!</h2>
-            <p style="text-align: center;">Training takes place twice a week at the University Sports Centre. If you'd like to join us, come along or drop us a message!</p></br>
-            <p style="text-align: center;"><a class="btn btn-secondary" href="#" role="button">Committee page &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
+    </br>
+        <p style="text-align: center;"><a class="btn btn-secondary" href="#" role="button">Blog posts &raquo;</a></p>
 
-    </div><!-- /.row -->
+      </div>
+
+      <div class="col-sm-4">
+        <p style="text-align: center;">
+          <img src="{%static 'cambackcrop.jpg' %}" width='140' height='140' class='center'>
+        </p>
+        <h2 style="text-align: center; color:rgba(51, 204, 204, 0.87) ">Join us!</h2>
+        <p style="text-align: center;">Training takes place twice a week at the University Sports Centre. If you'd like to join us, come along or drop us a message!</p>
+      </br>
+        <p style="text-align: center;"><a class="btn btn-secondary" href="#" role="button">Contact us &raquo;</a></p>
+      </div>
+    
+    </div>
+<!-- 
+    <div class='container'>
+    <div class="row">
+
+      <div class="col-sm-4">
+        <div class="card">
+          <p style="text-align: center;">
+            <img src="{%static 'cambackcrop.jpg' %}" width='140' height='140' class='center'>
+          </p>
+          <div class="card-body">
+            <h5 class="card-title">Join Us</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          </div>
+          <div class="card-body">
+            <p style="text-align: center;"><a class="btn btn-secondary" href="#" role="button">Contact us &raquo;</a></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-4">      
+        <div class="card">
+          <p style="text-align: center;">
+            <img src="{%static 'cambackcrop.jpg' %}" width='140' height='140' class='center'>
+          </p>
+          <div class="card-body">
+            <h5 class="card-title">Join Us</h5>
+            <p class="card-text">Some quick example text to build on the card title and mskdjfhskdjfhskdjfhksjfhksjdhfkake up the bulk of the card's content.</p>
+          </div>
+          <div class="card-body">
+            <p style="text-align: center;"><a class="btn btn-secondary" href="#" role="button">Contact us &raquo;</a></p>
+          </div>
+        </div>
+        
+      </div>
+
+      <div class="col-sm-4">
+        <div class="card">
+          <p style="text-align: center;">
+            <img src="{%static 'cambackcrop.jpg' %}" width='140' height='140' class='center'>
+          </p>
+          <div class="card-body">
+            <h5 class="card-title">Join Us</h5>
+            <p class="card-text">Some quick example text to build on tthe card's content.</p>
+          </div>
+          <div class="card-body">
+            <p style="text-align: center;"><a class="btn btn-secondary" href="#" role="button">Contact us &raquo;</a></p>
+          </div>
+        </div>
+       
+      </div>
+
+      
+    
+    </div>
+  </div>
+  -->
+
+
+<!-- 
+    <div class="row">
+
+      <div class="col-sm-4">
+        <p style="text-align: center;"><a class="btn btn-secondary" href="#" role="button">Learn More &raquo;</a></p>
+      </div>
+
+      <div class="col-sm-4">
+        <p style="text-align: center;"><a class="btn btn-secondary" href="#" role="button">Blog posts &raquo;</a></p>
+      </div>
+
+      <div class="col-sm-4">
+        <p style="text-align: center;"><a class="btn btn-secondary" href="#" role="button">Contact us &raquo;</a></p>
+      </div>
+
+    </div>
+-->
+          
 
 
     <!-- START THE FEATURETTES -->
-
     <hr class="featurette-divider">
 
     <div class="row featurette">
       <div class="col-md-7">
-        <h2 class="featurette-heading">I dont know what to put here. <span class="text-muted">Swap with the circle bits?</span></h2>
-        <p class="lead"> Maybe don't even need it? and how does the spacing all work hmmmmmm seems like the picture can keep things even... </p>
+        <h2 class="featurette-heading">Eton Fives? </h2>
+        <p class="lead"> Sqaush with your hands (BUt in doubles only, and without the backwall, and replace with a step, a hole, a buttress, ledges... ) </p>
       </div>
       <div class="col-md-5">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
+        <img src="{%static 'masscrop.jpg'%}" width="500" height="500" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" >
       </div>
     </div>
 
@@ -276,7 +358,36 @@
 
     <hr class="featurette-divider">
 
-    <!-- /END THE FEATURETTES -->
+  <!-- /END THE FEATURETTES -->
+  </br>
+
+  <div class="album py-5 bg-light container">
+    <div class="container">
+      <h1>Latest News</h1>
+
+      <div class="row">
+        {% for post in posts.all %}
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <img class='card-img-top' src="{{post.image.url}}" />
+            <div class="card-body">
+              <p class="card-text">{{post.body}}</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {% endfor %}
+
+
+      </div>
+    </div>
+  </div>
+
 
   </div><!-- /.container -->
 
@@ -286,7 +397,9 @@
     <p class="float-right"><a href="#">Back to top</a></p>
     <p>&copy; 2017-2019 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
   </footer>
+
 </main>
+
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>

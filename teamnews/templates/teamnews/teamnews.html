@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.6">
-    <title>CUEFC - The Committee</title>
+    <title>CUEFC - Club News</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/album/">
 
@@ -42,7 +42,7 @@
   </head>
   <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light container marketing">
+        <nav class="navbar navbar-expand-lg navbar-light  bg-light container marketing">
             <a class="navbar-brand" href="{%url 'home'%}" >
                 <!-- <img href="https://cdn.emojidex.com/emoji/px128/fleur_de_lis.png?1422536840" width="30" height="30" alt=""> -->
                 Cambridge University Eton Fives Club
@@ -90,7 +90,7 @@
 
 <main role="main">
 <!-- 
-  <section class="jumbotron text-center container" style='background-color: transparent;'>
+  <section class="jumbotron text-center container">
     <div class="container">
         <br/>
         <br/>
@@ -118,35 +118,34 @@
   </section>
 -->
 
+<div class='container text-center' style="color: white; background-image: url('/static/cheer.svg'); background-size: cover;">
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <h1>About</h1>
 
-  <div class='container text-center' style="color: white; background-image: url('/static/cheer.svg'); background-size: cover;">
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <h1>About</h1>
-
-    <ul class="nav justify-content-center">
-        <li class="nav-item">
-          <a class="nav-link" href="{%url 'allnews'%}" style='color:white;'>Eton Fives</a>
+  <ul class="nav justify-content-center">
+      <li class="nav-item">
+        <a class="nav-link active" href="{%url 'allnews'%}" style='color:white;'>Eton Fives</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{%url 'teamnews'%}" style='color:white;'>Club News</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{%url 'committee'%}" style='color:white;' >Committee</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" href="{%url 'sponsers'%}" style='color:white;' >Sponsership</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{%url 'teamnews'%}" style='color:white;'>Club News</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="{%url 'committee'%}" style='color:white;' >Committee</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="{%url 'sponsers'%}" style='color:white;' >Sponsership</a>
-          </li>
-      </ul>
-      <br/>
-      <br/>
+    </ul>
     <br/>
     <br/>
-    </div>
-     
+  <br/>
+  <br/>
+  </div>
+   
 
 
   <!-- how to do tabbed nav 
@@ -169,47 +168,39 @@
 -->
 
   <div class="album py-5  container">
-    <hr class="featurette-divider">
     <div class="container">
-      <h1>Meet the Captains</h1>
-      <div class='row'> 
-        <div class='col-sm'>
-          <h3> <span class="text-muted"> Men's Captain </span></h3>
-          <p> hellooo </p>
-        </div>
-  
-        <div class='col-sm'>
-          <h3> <span class="text-muted"> Ladies's Captain </span></h3>
-          <p> hellooo </p>
-        </div>
+       
+          <nav class="navbar navbar-light justify-content-between">
+            <a class="navbar-brand"><h1>Club News</h1></a>
+            <form class="form-inline">
+              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+          </nav>
 
+  
+        <div class="row">
+          {% for post in posts.all %}
+          <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+              <img class='card-img-top' src="{{post.image.url}}" />
+              <div class="card-body">
+                <p class="card-text">{{post.body}}</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <a class="btn btn-primary" href="{% url 'newsdetail' post.id %}" role="button">View</a>
+                    <!-- <button href="{% url 'newsdetail' post.id %}" type="button" class="btn btn-sm btn-outline-secondary">View</button> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          {% endfor %}
+  
+  
+        </div>
       </div>
-
-
-    </div>
-    
-    <hr class="featurette-divider">
-
-    <div class="row featurette container">
-        <div class="col-md">
-            <h1 class="featurette-heading">Committee 2020-2021</h1>
-            <h3> <span class="text-muted"> Junior Committee </span></h3>
-            <p>hello</p>
-            <h3> <span class="text-muted"> Senior Committee </span></h3>
-            <p>hello oo</p>
-        </div>
-    </div>
-
-    <hr class="featurette-divider">
-
-    <div class="row featurette container">
-        <div class="col-md">
-            <h1 class="featurette-heading">Previous Committees</h1>
-            <h3> <span class="text-muted"> do a tab reveal or something names only </span></h3>
-            <p>hello</p>
-        </div>
-    </div>
-  
   </div>
 
 
