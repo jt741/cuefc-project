@@ -19,3 +19,6 @@ def sponsership(request):
 def newsdetail(request, newspost_id):
     detailnewspost = get_object_or_404(BlogPost, pk=newspost_id)
     return render(request, 'teamnews/newsdetail.html', {'newspost': detailnewspost})
+
+def captains(request):
+    return render(request, 'teamnews/captains.html')
