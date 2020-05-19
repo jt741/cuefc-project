@@ -1,96 +1,114 @@
+
 <!doctype html>
 <html lang="en">
-  
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Jekyll v3.8.6">
-    <title>CUEFC</title>
+<head>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/carousel/">
+  <style>
+    .jumbotron {
+    background-image: url('/static/viralha.svg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    }        
 
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <link rel="icon" href="https://cdn.emojidex.com/emoji/px128/fleur_de_lis.png?1422536840" >
+  .bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
 
-    <meta name="msapplication-config" content="/docs/4.4/assets/img/favicons/browserconfig.xml">
-    <meta name="theme-color" content="#563d7c">
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  }
 
-    <style>
-      .link { color: #FF0000; } /* CSS link color */
-      .link:hover { color: #00FF00; }
-    </style>
-  </head>
 
-<body>
-  <header>
 
-  <nav class="navbar navbar-expand-lg navbar-light  bg-light container marketing" style="background-color: #e3f2fd;" >
-    <a class="navbar-brand" href="{%url 'home'%}" >
-        <!-- <img href="https://cdn.emojidex.com/emoji/px128/fleur_de_lis.png?1422536840" width="30" height="30" alt=""> -->
-        Cambridge University Eton Fives Club
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
+</style>
+</head>
 
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="{%url 'home'%}">Home <span class="sr-only">(current)</span></a>
-        </li>
-       
-          <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About</a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="{%url 'allnews'%}">Eton Fives</a>
-            <a class="dropdown-item" href="#">Team News</a>
-            <a class="dropdown-item" href="#">Committee</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Sponsership</a>
-          </div>
-        
-        </li>
-        
-        <li class="nav-item">
-          <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-expanded="false" aria-controls="collapseExample">
-              Hello
+  <body>
+    <h2 class="font-weight-bold my-5 text-center">My Projects</h2>
 
-            <div class="dropdown-menu" id="collapseExample">
-              <div class='container'>
-              <div class="card card-body">
-                Queskdh
-              </div>
-            </div>
-            </div>
+<!--First row-->
+<div class="row">
 
-          </a>
-        </li>
+  <!--First column-->
+  <div class="col-md-12">
 
-        <li class="nav-item">
-            <a class="nav-link" href="{%url 'pandf'%}">Practices & Fixtures</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="{%url 'gallery'%}">Gallery</a>
-        </li>  
-        <li class="nav-item">
-            <a class="nav-link" href="{%url 'committee'%}" style="color:rgb(111, 153, 158)"><i class="fa fa-envelope"></i><strong>Contact us</strong></a>
-        </li>  
-      </ul>
+    <div id="mdb-lightbox-ui"></div>
+
+    <!--Full width lightbox-->
+    <div class="mdb-lightbox">
+
+      <figure class="col-md-4">
+        <a href="https://mdbootstrap.com/img/Mockups/Lightbox/Thumbnail/img%20(63).jpg" data-size="1600x1067">
+          <img src="https://mdbootstrap.com/img/Mockups/Lightbox/Thumbnail/img%20(63).jpg" class="img-fluid z-depth-1">
+        </a>
+      </figure>
+
+      <figure class="col-md-4">
+        <a href="https://mdbootstrap.com/img/Mockups/Lightbox/Original/img%20(66).jpg" data-size="1600x1067">
+          <img src="https://mdbootstrap.com/img/Mockups/Lightbox/Thumbnail/img%20(66).jpg" class="img-fluid z-depth-1">
+        </a>
+      </figure>
+
+      <figure class="col-md-4">
+        <a href="https://mdbootstrap.com/img/Mockups/Lightbox/Original/img%20(65).jpg" data-size="1600x1067">
+          <img src="https://mdbootstrap.com/img/Mockups/Lightbox/Thumbnail/img%20(65).jpg" class="img-fluid z-depth-1">
+        </a>
+      </figure>
+
+      <figure class="col-md-4">
+        <a href="https://mdbootstrap.com/img/Mockups/Lightbox/Original/img%20(67).jpg" data-size="1600x1067">
+          <img src="https://mdbootstrap.com/img/Mockups/Lightbox/Thumbnail/img%20(67).jpg" class="img-fluid z-depth-1">
+        </a>
+      </figure>
+
+      <figure class="col-md-4">
+        <a href="https://mdbootstrap.com/img/Mockups/Lightbox/Original/img%20(68).jpg" data-size="1600x1067">
+          <img src="https://mdbootstrap.com/img/Mockups/Lightbox/Thumbnail/img%20(68).jpg" class="img-fluid z-depth-1">
+        </a>
+      </figure>
+
+      <figure class="col-md-4">
+        <a href="https://mdbootstrap.com/img/Mockups/Lightbox/Original/img%20(64).jpg" data-size="1600x1067">
+          <img src="https://mdbootstrap.com/img/Mockups/Lightbox/Thumbnail/img%20(64).jpg" class="img-fluid z-depth-1">
+        </a>
+      </figure>
+
+      <figure class="col-md-4">
+        <a href="https://mdbootstrap.com/img/Mockups/Lightbox/Original/img%20(69).jpg" data-size="1600x1067">
+          <img src="https://mdbootstrap.com/img/Mockups/Lightbox/Thumbnail/img%20(69).jpg" class="img-fluid z-depth-1">
+        </a>
+      </figure>
+
+      <figure class="col-md-4">
+        <a href="https://mdbootstrap.com/img/Mockups/Lightbox/Original/img%20(59).jpg" data-size="1600x1067">
+          <img src="https://mdbootstrap.com/img/Mockups/Lightbox/Thumbnail/img%20(59).jpg" class="img-fluid z-depth-1">
+        </a>
+      </figure>
+
+      <figure class="col-md-4">
+        <a href="https://mdbootstrap.com/img/Mockups/Lightbox/Original/img%20(70).jpg" data-size="1600x1067">
+          <img src="https://mdbootstrap.com/img/Mockups/Lightbox/Thumbnail/img%20(70).jpg" class="img-fluid z-depth-1">
+        </a>
+      </figure>
 
     </div>
-  </nav> 
-</header>
-<main role = 'main'>
-    <a class="link" href="http://example.com/one">A Red Link</a>
-    <a class="link" href="http://example.com/two">Another Red Link</a>
+    <!--/Full width lightbox-->
 
-</main> 
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </div>
+  <!--/First column-->
+
+</div>
+<!--First row-->
+
 </body>
 </html>

@@ -1,1 +1,217 @@
-gallery page
+
+<!doctype html>
+<html lang="en">
+    {%load staticfiles%}
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.6">
+    <title>CUEFC - Club News</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/album/">
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="icon" href="https://cdn.emojidex.com/emoji/px128/fleur_de_lis.png?1422536840" >
+
+
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .bottomleft {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+  font-size: 18px;
+}
+    
+    </style>
+
+
+  </head>
+  <body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light  bg-light container marketing">
+            <a class="navbar-brand" href="{%url 'home'%}" >
+                <!-- <img href="https://cdn.emojidex.com/emoji/px128/fleur_de_lis.png?1422536840" width="30" height="30" alt=""> -->
+                Cambridge University Eton Fives Club
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+        
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="{%url 'home'%}">Home <span class="sr-only">(current)</span></a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="{%url 'allnews'%}">About</a>
+                </li>
+        
+                <li class="nav-item">
+                    <a class="nav-link" href="{%url 'pandf'%}">Practices & Fixtures</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{%url 'gallery'%}">Gallery</a>
+                </li>  
+                <li class="nav-item">
+                    <a class="nav-link" href="{%url 'committee'%}" style="color:rgb(111, 153, 158)"><strong>Contact us</strong></a>
+                </li>  
+              </ul>
+        
+            </div>
+          </nav> 
+</header>
+
+<main role="main">
+
+<div class='container text-center' style="color: white; background-image: url('/static/gals.svg'); background-size: cover;">
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <h1>Gallery</h1>
+  <br/>
+  <br/>
+  
+    <br/>
+    <br/>
+  <br/>
+  <br/>
+  </div>
+   
+
+
+  <!-- how to do tabbed nav 
+  <div class='container'>
+  <ul class="nav nav-tabs justify-content-center">
+    <li class="nav-item">
+      <a class="nav-link active" href="#">Introduction</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Eton Fives at Cambridge</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">History of the Game</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link disabled" href="#">How to get involved</a>
+    </li>
+  </ul>
+</div>
+-->
+
+  <div class="album py-5  container">
+    
+       
+          <nav class="navbar navbar-light justify-content-between">
+            <a class="navbar-brand"><h1>Gallery</h1></a>
+          </nav>
+
+
+        
+<br/>
+
+          <div class="row row-cols-1 row-cols-md-3">
+            {% for album in albums.all %}
+            <div class="col mb-4">
+                <a href='#'>
+              <div class="card h-100">
+                
+                <img src="{{album.image.url}}" class="card-img-top" alt="{{album.caption}}">
+                
+                    <div class="card-body">
+                    <h6 class="card-title text-center">{{album.title}}</h6>
+                    <!-- <p class="card-text">{{album.caption}}</p> 
+                    <small class="text-muted"><a class="btn btn-outline-info" href="#" role="button">View</a></small> -->
+                    </div>
+
+              </div>
+              </a>
+            </div>
+            {% endfor %}
+          </div>
+
+      
+          <hr class="featurette-divider">
+
+      <br/>
+
+          <div class="row row-cols-1 row-cols-md-3">
+            {% for album in albums.all %}
+            <div class="col mb-4">
+              <div class="card h-100">
+                <img src="{{album.image.url}}" class="card-img-top" alt="{{album.caption}}">
+                <p class="carousel-caption">{{album.title}}</p>
+                <!-- 
+                <div class="card-body">
+                  <p class="card-text">{{album.caption}}</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted"><a class="btn btn-primary" href="#" role="button">View</a></small>
+                </div>
+            -->
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+          <hr class="featurette-divider">
+
+          <br/>
+
+<div class="container">
+    <div class="row row-cols-3">
+        {% for album in albums.all %}
+        <div class="card text-white">
+            <img src="{{album.image.url}}" class="card-img" alt="{{album.caption}}">
+            <div class="card-img-overlay">
+              <h5 class="align-text-bottom">{{album.title}}</h5>
+              
+              <!-- <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <p class="card-text">Last updated 3 mins ago</p> -->
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+  </div>
+
+  </div>
+
+
+</main>
+
+<footer class="text-muted">
+  <div class="container">
+    <p class="float-right">
+      <a href="#">Back to top</a>
+    </p> &copy; CUEFC </p>
+  </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+</body>
+</html>
