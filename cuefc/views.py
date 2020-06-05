@@ -13,3 +13,6 @@ def ctest(request):
 
 def pandf(request):
     return render(request, 'practicesandfixtures.html')
+
+def contactus(request):
+    return render(request, 'contact.html')

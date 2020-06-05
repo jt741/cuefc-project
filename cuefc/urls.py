@@ -26,6 +26,6 @@ urlpatterns = [
     path('help', views.ctest),
     path('about/', include('teamnews.urls')),
     path('gallery/', include('gallery.urls')),
-    path('contact/', include('committee.urls')),
+    path('contact/', views.contactus, name='contactus'),
     path('practicesandfixtures/', views.pandf, name='pandf')
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
