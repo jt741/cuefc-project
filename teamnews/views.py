@@ -7,8 +7,22 @@ def allnews(request):
     return render(request, 'teamnews/about.html', {'posts': posts})
 
 def teamnews(request):
-    posts = BlogPost.objects.order_by('-pub_date')
-    return render(request, 'teamnews/teamnews.html', {'posts': posts})
+    try:
+        q = request.GET.get('q')
+    except:
+        q = None
+        print('nothing was searched')
+            
+    if q:
+        posts = BlogPost.objects.filter(Q(title__icontains=q) | Q(body__icontains=q)).order_by('-pub_date')
+        print(posts)
+        context = {'query' : q, 'posts': posts}
+
+    else:
+        posts = BlogPost.objects.order_by('-pub_date')
+        context = {'posts': posts}
+
+    return render(request, 'teamnews/teamnews.html', context)
 
 def committee(request):
     return render(request, 'committee/committee.html') #idk why but it auto goes to committee even if u type teamnews!

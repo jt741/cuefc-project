@@ -56,19 +56,7 @@
                 <li class="nav-item active">
                   <a class="nav-link" href="{%url 'home'%}">Home <span class="sr-only">(current)</span></a>
                 </li>
-                <!-- how to do dropdown
-                  <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About</a>
-                  <div class="dropdown-menu">
-                    <a class="dropdown-item" href="{%url 'allnews'%}">Eton Fives</a>
-                    <a class="dropdown-item" href="#">Team News</a>
-                    <a class="dropdown-item" href="#">Committee</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Sponsership</a>
-                  </div>
-                
-                </li>
-            -->
+
                 <li class="nav-item">
                   <a class="nav-link" href="{%url 'allnews'%}">About</a>
                 </li>
@@ -89,34 +77,7 @@
 </header>
 
 <main role="main">
-<!-- 
-  <section class="jumbotron text-center container">
-    <div class="container">
-        <br/>
-        <br/>
-        <h1>About</h1>
 
-        <ul class="nav justify-content-center">
-            <li class="nav-item">
-              <a class="nav-link active" href="{%url 'allnews'%}">Eton Fives</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{%url 'teamnews'%}">Club News</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Committee</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Sponsership</a>
-              </li>
-          </ul>
-
-
-        
-    </div>
-
-  </section>
--->
 
 <div class='container text-center' style="color: white; background-image: url('/static/cheer.svg'); background-size: cover;">
   <br/>
@@ -148,81 +109,51 @@
   <br/>
   <br/>
   </div>
-   
-
-
-  <!-- how to do tabbed nav 
-  <div class='container'>
-  <ul class="nav nav-tabs justify-content-center">
-    <li class="nav-item">
-      <a class="nav-link active" href="#">Introduction</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Eton Fives at Cambridge</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">History of the Game</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link disabled" href="#">How to get involved</a>
-    </li>
-  </ul>
-</div>
--->
 
   <div class="album py-5 ">
     <div class="container">
        
-          <nav class="navbar navbar-light justify-content-between">
+          
+  
+        <nav class="navbar navbar-light justify-content-between">
             <a class="navbar-brand"><h1>Club News</h1></a>
-            <form class="form-inline">
-              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            <form class="form-inline" role='search' action="/s/">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" name="q">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form>
-          </nav>
+        </nav>
+          
+        {% if posts %}
 
-          <div class="row row-cols-1 row-cols-md-3">
-            {% for post in posts.all %}
-            <div class="col mb-4">
-                
-              <div class="card h-100">
-                
-                <img src="{{post.image.url}}" class="card-img-top">
-                
-                    <div class="card-body">
-                    <h6 class="card-title text-center">{{album.title}}</h6>
-                    <p class="card-text">{{post.body}}</p> 
-                    <small class="text-muted"><a class="btn btn-outline-info" href="{% url 'newsdetail' post.id %}" role="button">View</a></small> 
-                    </div>
-
-              </div>
-              
-            </div>
-            {% endfor %}
-          </div>
-
-  
-        <!-- <div class="row">
-          {% for post in posts.all %}
-          <div class="col-md-4">
-            <div class="card mb-4 shadow-sm">
-              <img class='card-img-top' src="{{post.image.url}}" />
-              <div class="card-body">
-                <p class="card-text">{{post.body}}</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <a class="btn btn-primary" href="{% url 'newsdetail' post.id %}" role="button">View</a>
-                    <!-- <button href="{% url 'newsdetail' post.id %}" type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                  </div>
+            {% if query %}
+                <div class="container">
+                <h2>searched for:  {{query}}</h2>
                 </div>
-              </div>
+            {% endif %}
+
+
+            <div class="row row-cols-1 row-cols-md-3">
+                {% for post in posts.all %}
+                <div class="col mb-4">
+                    <div class="card h-100">
+                        <img src="{{post.image.url}}" class="card-img-top">
+                        <div class="card-body">
+                            <h6 class="card-title text-center">{{post.title}}</h6>
+                            <p class="card-text">{{post.body}}</p> 
+                            <small class="text-muted"><a class="btn btn-outline-info" href="{% url 'newsdetail' post.id %}" role="button">View</a></small> 
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
             </div>
-          </div>
-  
-          {% endfor %}
-  
-  
-        </div> -->
+        {% else %}
+            <div class="container">
+                <h2>No results found</h2>
+                <p>Nothing was found matching your search: "{{query}}"</p>
+            </div>
+
+        {% endif %}
+
       </div>
   </div>
 
