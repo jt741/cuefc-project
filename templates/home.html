@@ -1,27 +1,11 @@
-
-<!doctype html>
-<html lang="en">
+{% extends 'base.html' %}
 
 {%load staticfiles%}
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Jekyll v3.8.6">
+{% block title %}
     <title>CUEFC</title>
-
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/carousel/">
-
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
-    <link rel="icon" href="https://cdn.emojidex.com/emoji/px128/fleur_de_lis.png?1422536840" >
-
-    <meta name="msapplication-config" content="/docs/4.4/assets/img/favicons/browserconfig.xml">
-    <meta name="theme-color" content="#563d7c">
-
-
+    {% endblock %}
+    
+    {% block style %}
     <style>
       .bd-placeholder-img {
         font-size: 1.125rem;
@@ -47,78 +31,12 @@
 
 
     </style>
+{% endblock %}
 
 
-
-  </head>
   
-  <body>
-    
-    <header>
-  
-  <nav class="navbar navbar-fixed-top navbar-expand-lg navbar-light bg-light container marketing">
-    <a class="navbar-brand" href="{%url 'home'%}" style='font-family:"Trebuchet MS", Helvetica, sans-serif' >
-        <!-- <img href="https://cdn.emojidex.com/emoji/px128/fleur_de_lis.png?1422536840" width="30" height="30" alt=""> -->
-        Cambridge University Eton Fives Club
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
 
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="{%url 'home'%}">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <!-- how to do dropdown
-          <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About</a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="{%url 'allnews'%}">Eton Fives</a>
-            <a class="dropdown-item" href="#">Team News</a>
-            <a class="dropdown-item" href="#">Committee</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Sponsership</a>
-          </div>
-        
-        </li>
-    -->
-        <li class="nav-item">
-          <a class="nav-link" href="{%url 'allnews'%}">About</a>
-        </li>
-
-        <li class="nav-item">
-            <a class="nav-link" href="{%url 'pandf'%}">Practices & Fixtures</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="{%url 'gallery'%}" >Gallery</a>
-        </li>  
-        <li class="nav-item">
-            <a class="nav-link" href="{%url 'contactus'%}" style="color:rgba(51, 204, 204, 0.87)"><strong>Contact us</strong></a>
-        </li>  
-      </ul>
-
-    </div>
-  </nav> 
-   <!-- 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light ">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-        <a class="nav-item nav-link" href="#">Features</a>
-        <a class="nav-item nav-link" href="#">Pricing</a>
-        <a class="nav-item nav-link disabled" href="#">Disabled</a>
-      </div>
-    </div>
-  </nav>-->
-
-</header>
-
-<main role="main">
+{% block title_picture %}
     
     <div id="myCarousel" class="carousel slide container " data-ride="carousel">
         <ol class="carousel-indicators">
@@ -192,63 +110,24 @@
         </a>
     </div>
 
+    {% endblock %}
+
 
   <!-- Marketing messaging and featurettes
   ================================================== -->
   <!-- Wrap the rest of the page in another container to center all the content. -->
 
+  {% block link_nav %}
     </br>
     </br> 
   <div class="container marketing">
 
-    <!-- Three columns of text below the carousel
-    
-    
-    <div class="row">
-
-      <div class="col-sm-4">
-
-        <p style="text-align: center;">
-          <img src="{%static 'omgcrop.jpg' %}" width='140' height='140' class='center'>
-        </p>
-        <h2 style="text-align: center; color:rgba(51, 204, 204, 0.87)" >Eton Fives?</h2>
-        <p style="text-align: center;">Sqaush with your hands </br> (BUt in doubles only, and without the backwall, and replace with a step, a hole, a buttress, ledges, nicer people... ) </p>
-
-        <p style="text-align: center;"><a class="btn btn-secondary" href="#" role="button">Learn More &raquo;</a></p>
-      
-      </div>
-
-      <div class="col-sm-4">      
-        
-        <p style="text-align: center;">
-          <img src="{%static 'candidcrop.jpg' %}" width='140' height='140' class='center'>
-        </p>
-        <h2 style="text-align: center; color:rgba(51, 204, 204, 0.87)">Team news</h2>
-        <p style="text-align: center;">Catch up with what the team has been up to - will include links to match reports from the official EFA</p> 
-
-    </br>
-        <p style="text-align: center;"><a class="btn btn-secondary" href="#" role="button">Blog posts &raquo;</a></p>
-
-      </div>
-
-      <div class="col-sm-4">
-        <p style="text-align: center;">
-          <img src="{%static 'cambackcrop.jpg' %}" width='140' height='140' class='center'>
-        </p>
-        <h2 style="text-align: center; color:rgba(51, 204, 204, 0.87) ">Join us!</h2>
-        <p style="text-align: center;">Training takes place twice a week at the University Sports Centre. If you'd like to join us, come along or drop us a message!</p>
-      </br>
-        <p style="text-align: center;"><a class="btn btn-secondary" href="#" role="button">Contact us &raquo;</a></p>
-      </div>
-    
-    </div>
-  -->
-
+   
 
 
   <!-- finally! it aligns and doesn't mess up on mobile -->
-    <div class="card-deck">
-      <div class="card border-0 px-md-5">
+    <div class="card-deck ">
+      <div class="card border-0 px-md-5 col-md-auto">
         <img src="{%static 'omgcrop.jpg' %}" class="card-img-top" alt="...">
         <div class="card-body">
           <h2 class="card-title" style="text-align: center; color:rgba(51, 204, 204, 0.87)" >Eton Fives?</h2>
@@ -261,7 +140,7 @@
         </div>
       </div>
 
-      <div class="card border-0 px-md-5">
+      <div class="card border-0 px-md-5 col-md-auto">
         <img src="{%static 'candidcrop.jpg' %}" class="card-img-top" alt="...">
         <div class="card-body">
           <h2 class="card-title" style="text-align: center; color:rgba(51, 204, 204, 0.87)" >Team News</h2>
@@ -274,7 +153,7 @@
         </div>
       </div>
 
-      <div class="card border-0 px-md-5">
+      <div class="card border-0 px-md-5 col-md-auto">
         <img src="{%static 'cambackcrop.jpg' %}" class="card-img-top" alt="...">
         <div class="card-body">
           <h2 class="card-title" style="text-align: center; color:rgba(51, 204, 204, 0.87)" >Join us!</h2>
@@ -291,6 +170,7 @@
 
       
     </div>
+    {% endblock %}
 
 
     <!-- START THE FEATURETTES 
@@ -333,50 +213,42 @@
     <hr class="featurette-divider">
 
   <!-- /END THE FEATURETTES -->
+  {% block content %}
   </br>
 
   <!-- I hate the layout of this!!! maybe horizontal cards? like feautrettes.. and feature insta posts in the futre?-->
   <div class="album py-5 bg-light container">
     <div class="container">
       <h1>Latest News</h1>
-
-      <div class="row">
-        {% for post in posts.all %}
-        <div class="col-md-4">
-          <div class="card mb-4 shadow-sm">
-            <img class='card-img-top' src="{{post.image.url}}" />
+      {% for post in posts.all %}
+      <div class="card mb-3" style = "width = 100%">
+        <div class="row ">
+          <div class="col-md-4">
+            <img src="{{post.image.url}}" class="card-img">
+          </div>
+          <div class="col-md-8">
             <div class="card-body">
-              <p class="card-text">{{post.body}}</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                </div>
-              </div>
+              <h5 class="card-title">{{post.title}}</h5>
+              
+              {{post.pub_date_pretty}}
+            
+              
+              <p class="card-text">{{post.summary}}</p>
+              <p class="card-text">
+                <small class="text-muted">
+                  <a href="{% url 'newsdetail' post.id %}" class="stretched-link">Continue reading...</a>
+                </small>
+              </p>
             </div>
           </div>
         </div>
-
-        {% endfor %}
-
-
       </div>
+      {% endfor %}
+
     </div>
   </div>
 
 
   </div><!-- /.container -->
+  {%endblock%}
 
-
-  <!-- FOOTER -->
-  <footer class="container">
-    <p class="float-right"><a href="#">Back to top</a></p>
-    <p>&copy; 2017-2019 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
-  </footer>
-
-</main>
-
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    </body>
-</html>

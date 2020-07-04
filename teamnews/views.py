@@ -1,10 +1,15 @@
 from django.shortcuts import render, get_object_or_404
 from .models import BlogPost
+from websitetext.models import AboutFives
+from django.db.models import Q
 
 # Create your views here.
 def allnews(request):
-    posts = BlogPost.objects
-    return render(request, 'teamnews/about.html', {'posts': posts})
+    text = get_object_or_404(AboutFives)
+    template = 'teamnews/about.html'
+    context = {'text' : text}
+    return render(request, template, context)
+    
 
 def teamnews(request):
     try:

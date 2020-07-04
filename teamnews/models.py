@@ -9,3 +9,10 @@ class BlogPost(models.Model):
 
     def __str__(self):
         return self.title
+
+    def summary(self):
+        summary = self.body[:100] + "..."
+        return summary
+
+    def pub_date_pretty(self):
+        return self.pub_date.strftime('%b %e %Y')

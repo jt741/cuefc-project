@@ -95,13 +95,14 @@
     <div class="container">
 
 
-        <hr />  <!-- This adds a line break thingy -->
-        <h1>{{newspost.title}}</h1>
-            <p class='text-center'>{{newspost.pub_date}}</p>
+    </br>
+        <h1 class='text-center'>{{newspost.title}}</h1>
+            <p class='text-center'>{{newspost.pub_date_pretty}}</p>
+            <hr />  <!-- This adds a line break thingy -->
             <img class='img-fluid' src='{{newspost.image.url}}' />
             <br />
             <br />
-            <p>{{newspost.body}}</p>
+            <p>{{newspost.body|linebreaks}}</p>
 
 
     </div>

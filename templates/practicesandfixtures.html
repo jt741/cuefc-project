@@ -1,23 +1,12 @@
+{% extends 'base.html' %}
+{%load staticfiles%}
 
-<!doctype html>
-<html lang="en">
-    {%load staticfiles%}
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Jekyll v3.8.6">
+  {% block title %}
     <title>CUEFC - Training & Matches </title>
+  {% endblock %}
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/album/">
-
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="icon" href="https://cdn.emojidex.com/emoji/px128/fleur_de_lis.png?1422536840" >
-
-
-
+  {% block style %}
+    
     <style>
         .jumbotron {
         background-image: url('/static/viralha.svg');
@@ -61,46 +50,14 @@
     
     </style>
 
+<br/>
+ {% endblock %}
 
-  </head>
-  <body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light  bg-light container marketing">
-            <a class="navbar-brand" href="{%url 'home'%}" >
-                <!-- <img href="https://cdn.emojidex.com/emoji/px128/fleur_de_lis.png?1422536840" width="30" height="30" alt=""> -->
-                Cambridge University Eton Fives Club
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-        
-              <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                  <a class="nav-link" href="{%url 'home'%}">Home <span class="sr-only">(current)</span></a>
-                </li>
+  
 
-                <li class="nav-item">
-                  <a class="nav-link" href="{%url 'allnews'%}">About</a>
-                </li>
-        
-                <li class="nav-item">
-                    <a class="nav-link" href="{%url 'pandf'%}">Practices & Fixtures</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{%url 'gallery'%}">Gallery</a>
-                </li>  
-                <li class="nav-item">
-                    <a class="nav-link" href="{%url 'contactus'%}" style="color:rgb(111, 153, 158)"><strong>Contact us</strong></a>
-                </li>  
-              </ul>
-        
-            </div>
-          </nav> 
-    </header>
 
-<main role="main">
 
+{% block title_picture %}
 <!-- dodgy breaks container ooog=f -->
 
 <div class='container text-center' style="color: white; background-image: url('/static/arthurcut.svg'); background-size: cover;">
@@ -132,39 +89,12 @@
     
     </div>
 
-     <!-- jumbotron version
-    <section class="jumbotron text-center container">
-        <div class="container">
-            <br/>
-            <br/>
-            <h1>Training and Matches</h1>
-    
-            <ul class="nav justify-content-center">
-                <li class="nav-item">
-                  <a class="nav-link active" href="#">Eton Fives</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Club News</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Committee</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Sponsership</a>
-                  </li>
-              </ul>
-          
-    
-    
-            
-        </div>
-    
-      </section>
-    -->
+    <br/>
+    <br/>
 
-  <!-- how to do tabbed nav -->
+{% endblock %}
 
-<br/>
+{% block link_nav %}
 
 <!-- <div class='container'>-->
     <ul class="nav nav-tabs container" id="myTab" role="tablist">
@@ -180,17 +110,15 @@
       </ul>
       <div class="tab-content container" id="myTabContent">
         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-            Training takes place ... Training takes place ... Training takes place ... Training takes place ...Training takes place ...Training takes place ...
-            Training takes place ... Training takes place ... Training takes place ... Training takes place ...Training takes place ...Training takes place ...
-            Training takes place ... Training takes place ... Training takes place ... Training takes place ...Training takes place ...Training takes place ...
-            Training takes place ... Training takes place ... Training takes place ... Training takes place ...Training takes place ...Training takes place ...
-            Training takes place ... Training takes place ... Training takes place ... Training takes place ...Training takes place ...Training takes place ...
-            Training takes place ... Training takes place ... Training takes place ... Training takes place ...Training takes place ...Training takes place ...
+          
+            <h5>{{text.Training}}</h5>
         </div>
         <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="begin-tab">
-            Beginners are always welcome .. hmm i dont like how the page jumps but whatev
+          
+            {{text.Beginners}}
         </div>
         <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="calendar-tab">
+          
           <p width=100%>
             The calendar below can be added to your Google Account so you can have the fixture list on your phone or other device and it will sync with the club's copy so you always have the most up-to-date fixture list. Just click the button at the bottom-right. Alternatively, click on an individual fixture to copy it to your calendar.
           </br>
@@ -206,42 +134,7 @@
       </div>
 </div>
 
-<br/>
-<!-- pure buttons no line 
-<div class='container'>
-    <ul class="nav nav-pills mb-3 " id="pills-tab" role="tablist">
-        <li class="nav-item">
-          <a class="nav-link active btn btn-outline-info" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Contact</a>
-        </li>
-      </ul>
-      <div class="tab-content" id="pills-tabContent">
-        <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">...</div>
-        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">...</div>
-        <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...</div>
-      </div>
-</div>
--->
+{% endblock %}
 
 
-</main>
 
-<footer class="text-muted">
-  <div class="container">
-    <p class="float-right">
-      <a href="#">Back to top</a>
-    </p> &copy; CUEFC </p>
-  </div>
-</footer>
-
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-
-</body>
-</html>

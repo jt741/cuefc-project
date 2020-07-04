@@ -117,9 +117,9 @@
   
         <nav class="navbar navbar-light justify-content-between">
             <a class="navbar-brand"><h1>Club News</h1></a>
-            <form class="form-inline" role='search' action="/s/">
+            <form class="form-inline" role='search' action="/about/clubnews/">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" name="q">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
             </form>
         </nav>
           
@@ -131,25 +131,40 @@
                 </div>
             {% endif %}
 
-
-            <div class="row row-cols-1 row-cols-md-3">
-                {% for post in posts.all %}
-                <div class="col mb-4">
-                    <div class="card h-100">
-                        <img src="{{post.image.url}}" class="card-img-top">
-                        <div class="card-body">
-                            <h6 class="card-title text-center">{{post.title}}</h6>
-                            <p class="card-text">{{post.body}}</p> 
-                            <small class="text-muted"><a class="btn btn-outline-info" href="{% url 'newsdetail' post.id %}" role="button">View</a></small> 
-                        </div>
-                    </div>
+            {% for post in posts.all %}
+            <div class="card mb-3" style = "width = 100%">
+              <div class="row ">
+                <div class="col-md-4">
+                  <img src="{{post.image.url}}" class="card-img">
                 </div>
-                {% endfor %}
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">{{post.title}}</h5>
+                    
+                    {{post.pub_date_pretty}}
+                  
+                    
+                    <p class="card-text">{{post.summary}}</p>
+                    <p class="card-text">
+                      <small class="text-muted">
+                        <a href="{% url 'newsdetail' post.id %}" class="stretched-link">Continue reading...</a>
+                      </small>
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
+            {% endfor %}
+
+                
         {% else %}
             <div class="container">
                 <h2>No results found</h2>
-                <p>Nothing was found matching your search: "{{query}}"</p>
+                <p>Nothing was found matching your search: "{{query}}"
+                </br>
+                <a href="{% url 'teamnews' %}" class="stretched-link">Show all posts again</a>
+                
+                </p>
             </div>
 
         {% endif %}

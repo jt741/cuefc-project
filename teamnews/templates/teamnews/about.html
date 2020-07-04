@@ -1,123 +1,15 @@
 
-<!doctype html>
-<html lang="en">
+    {% extends 'base.html' %}
     {%load staticfiles%}
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Jekyll v3.8.6">
+ 
+    {% block title %}
     <title>CUEFC - About Fives</title>
-
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/album/">
-
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="icon" href="https://cdn.emojidex.com/emoji/px128/fleur_de_lis.png?1422536840" >
-
-
-
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-
-
+    {% endblock %}
     
-    </style>
-
-
-  </head>
-  <body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light container marketing">
-            <a class="navbar-brand" href="{%url 'home'%}" >
-                <!-- <img href="https://cdn.emojidex.com/emoji/px128/fleur_de_lis.png?1422536840" width="30" height="30" alt=""> -->
-                Cambridge University Eton Fives Club
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-        
-              <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                  <a class="nav-link" href="{%url 'home'%}">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <!-- how to do dropdown
-                  <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About</a>
-                  <div class="dropdown-menu">
-                    <a class="dropdown-item" href="{%url 'allnews'%}">Eton Fives</a>
-                    <a class="dropdown-item" href="#">Team News</a>
-                    <a class="dropdown-item" href="#">Committee</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Sponsership</a>
-                  </div>
-                
-                </li>
-            -->
-                <li class="nav-item">
-                  <a class="nav-link" href="{%url 'allnews'%}">About</a>
-                </li>
-        
-                <li class="nav-item">
-                    <a class="nav-link" href="{%url 'pandf'%}">Practices & Fixtures</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{%url 'gallery'%}">Gallery</a>
-                </li>  
-                <li class="nav-item">
-                    <a class="nav-link" href="{%url 'contactus'%}" style="color:rgb(111, 153, 158)"><strong>Contact us</strong></a>
-                </li>  
-              </ul>
-        
-            </div>
-          </nav> 
-</header>
-
-<main role="main">
-<!-- 
-  <section class="jumbotron text-center container" style='background-color: transparent;'>
-    <div class="container">
-        <br/>
-        <br/>
-        <h1>About</h1>
-
-        <ul class="nav justify-content-center">
-            <li class="nav-item">
-              <a class="nav-link active" href="{%url 'allnews'%}">Eton Fives</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{%url 'teamnews'%}">Club News</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Committee</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Sponsership</a>
-              </li>
-          </ul>
-
-
-        
-    </div>
-
-  </section>
--->
-
+    {%block style%}
+    {{ block.super }}
+    {% endblock %}
+    {% block title_picture %}
 
   <div class='container text-center' style="color: white; background-image: url('/static/cheer.svg'); background-size: cover;">
     <br/>
@@ -148,7 +40,9 @@
       <br/>
     <br/>
     <br/>
-    </div>
+  </div>
+
+    {%endblock%}
      
 
 
@@ -170,17 +64,13 @@
   </ul>
 </div>
 -->
-
+  {% block content %}
   <div class="album py-5  container">
     <hr class="featurette-divider">
     <div class="container">
 
       <h1>Eton Fives at Cambridge</h1>
-      <p>Eton Fives is a half blue sport with the annual Varsity match taking place in March, featuring 6 men's pairs and 6 ladies' pairs. We have matches and tournaments throughout the year with opportunities to compete at all levels and beginners would be especially welcome. </p>
-      <p>The Cambridge University Eton Fives Club was established in the 1920s with the 1st Varsity match played in 1928. Today there are about 30 active members of the club forming two teams for both men and women.</p>
-      <p>The club is based at the University Sports Centre on the West Cambridge Site and has use of a court in town at Magdalene College as well.</p>
-      <p>Membership is open to all members of the univeristy and there is also an active contingent of non-university members playing as well. If you are interested in joining the club, please contact the Captain.
-
+      <p>{{text.EtonFivesatCambridge|linebreaks}}</p>
       </p>
     </div>
     <hr class="featurette-divider">
@@ -190,46 +80,19 @@
         <h1 class="featurette-heading">What is Eton Fives? </h1>
         <h3> <span class="text-muted"> Squash, but with gloves </span></h3>
         <p>
-          Eton Fives is played in a three-sided court with a step dividing the front and back portions. A buttress is located on the left hand side in line with the step, at the foot of which is a small hole called 'the pepperpot'. On the front wall, there is a ledge roughly 1.5m from the ground. Each shot during the rally must be hit 'up', i.e. it must hit the front wall above this ledge in order for the rally to continue. The court also has many other ledges and features, including notably the 'bricks' at the back of the court which allow more complicated shots to be played.
-  
-  
-        </br></br> Eton Fives is played in pairs, and during a rally the teams take it in turns to take shots, although for each shot, either team member may play on behalf of his team, as with tennis doubles. Each game is played up to twelve points, with a final point called 'step' when a team reaches eleven points. However, different scoring systems are adopted if the teams are tied at ten all, as with a tie break in tennis. Points are scored by winning a rally, however you can only score points when your team is serving.
-  
-  
-      </br></br> To begin a rally, one member of the serving team stands on top step next to the buttress and throws the ball around the top right hand corner of the court, so that it lands on the bottom step. One member of the other team then 'cuts' the ball back round into the buttress, ensuring that it hits the front wall above the ledge. The game is designed to put the serving team at a disadvantage so that it is not easy to gain points. Therefore the person cutting can reject the serve as many times as they like. In addition to this, if the cut does not go above the ledge, the rally does not begin and the serve is replayed. This means that the 'return of cut' (played immediately after the cut) is among the most difficult shots of the game.
-  
-  
-      </br></br> Once the rally has begun, it continues until one team fails to hit the ball 'up', lets the ball bounce twice or hits the ball out of the court without it bouncing first. If the serving team wins the rally, they win a point, otherwise the server is defeated and the next player begins serving. The serving order is determined by the fact that you serve, then cut twice, then serve again except at the very beginning of each match. A full set of rules for the game can be found here.
-  
+         {{text.WhatisEtonFives|linebreaks}}
         </p>
       
  
       <h3> <span class="text-muted"> History of Fives </span></h3>
-      <p>Fives has been around since the 17th century. The origins of the name are unclear but is thought to come from the fact that there are five digits on a hand. The shape of the court comes from the sport’s birthplace, Eton College, where the buttresses on the side of the chapel formed bays in which the boys could play. In 1840 the headmaster of Eton College built a new set of courts, based on the original chapel layout. In 1877, the official rules of Eton Fives were established and in 1885 the first ever inter-school match was played between Eton and Harrow. </p>
-      <p> The first ever Varsity match between Oxford and Cambridge was played in 1928 and the annual tradition continues to this day, with 6 men’s pairs and 6 ladies’ pairs when possible. Eton Fives is played in France, Austria, Switzerland, Germany, Australia, Malaysia, India, Argentina and Nigeria.</p>
+          <p>{{text.HistoryofEtonFives|linebreaks}}</p>
 
-
-        <p>More information on the history of Eton Fives can be found on the EFA website or in the book "A History of Eton Fives" by Dale Vargas and Peter Knowles.</p>
     </div>
   </div>
 
   
   </div>
 
+  {%endblock%}
 
-</main>
 
-<footer class="text-muted">
-  <div class="container">
-    <p class="float-right">
-      <a href="#">Back to top</a>
-    </p> &copy; CUEFC </p>
-  </div>
-</footer>
-
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-
-</body>
-</html>
