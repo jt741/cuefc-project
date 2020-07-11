@@ -1,0 +1,35 @@
+{% extends "training/base_training.html" %}
+{%load staticfiles%}
+{% block title %}
+    <title>CUEFC - Match Calendar</title>
+{% endblock %}
+
+{%block style%}
+    {{ block.super }}
+{% endblock %}
+
+
+{% block title_picture %}
+    {{ block.super }}
+{% endblock %}
+
+{% block content %}
+<div class="album py-5  container">
+
+    <h1>Match Calendar</h1>
+    <hr class="featurette-divider">
+<p width=100%>
+            The calendar below can be added to your Google Account so you can have the fixture list on your phone or other device and it will sync with the club's copy so you always have the most up-to-date fixture list. Just click the button at the bottom-right. Alternatively, click on an individual fixture to copy it to your calendar.
+          </br>
+          You can also click <a href="{%static 'matches.pdf'%}" target="_blank" >here</a> to view and print a pdf document listing the season's fixtures in a new tab. Please note the dates on this pdf may change. If you have questions, please contact the club secretary.
+        </br>
+        If you would like to play in a fixture, please contact the captains.
+          <div class="googleCalendar">
+            <iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Europe%2FLondon&amp;src=NmliMWNiNGZqdTU2dWpuYWM1YXZwYjZxMXNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;color=%23EF6C00" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+          </div>
+
+          </p>
+
+</div>
+
+{% endblock %}

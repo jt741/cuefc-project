@@ -21,33 +21,45 @@
     {% block style %}
 
     <style>
-        .bd-placeholder-img {
-          font-size: 1.125rem;
-          text-anchor: middle;
-          -webkit-user-select: none;
-          -moz-user-select: none;
-          -ms-user-select: none;
-          user-select: none;
+
+
+        /* change the background color */
+        .navbar-light {
+            background-color: rgba(51, 204, 204, 0.87);
         }
-  
-        @media (min-width: 768px) {
-          .bd-placeholder-img-lg {
-            font-size: 3.5rem;
-          }
+        /* change the brand and text color */
+        .navbar-light .navbar-brand,
+        .navbar-light .navbar-text {
+            color: rgba(51, 204, 204, 0.87);
         }
-  
-  
+        /* change the link color */
+        .navbar-light .navbar-nav .nav-link {
+            color: rgba(111, 113, 113, 0.5);
+        }
+        /* change the color of active or hovered links */
+        .navbar-light .nav-item.active .nav-link,
+        .navbar-light .nav-item:focus .nav-link,
+        .navbar-light .nav-item:hover .nav-link {
+            color: rgba(51, 204, 204, 0.87);
+        }
+
+    .link { color: rgba(255, 255, 255, 0.87)} /* CSS link color (red) */
+    .link:hover { color: rgba(51, 204, 204, 0.87) }
+
+
+
       
-      </style>
+    </style>
 
     {% endblock %}
 
   </head>
   <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light  bg-light container marketing">
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light container marketing" >
             <a class="navbar-brand" href="{%url 'home'%}" >
-                <!-- <img href="https://cdn.emojidex.com/emoji/px128/fleur_de_lis.png?1422536840" width="30" height="30" alt=""> -->
+{#               i need to get a logoogogogogo #}
                 Cambridge University Eton Fives Club
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -56,16 +68,16 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
         
               <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
+                <li class="nav-item">
                   <a class="nav-link" href="{%url 'home'%}">Home <span class="sr-only">(current)</span></a>
                 </li>
 
                 <li class="nav-item">
-                  <a class="nav-link" href="{%url 'allnews'%}">About</a>
+                  <a class="nav-link" href="{%url 'about' %}">About</a>
                 </li>
         
                 <li class="nav-item">
-                    <a class="nav-link" href="{%url 'pandf'%}">Practices & Fixtures</a>
+                    <a class="nav-link" href="{%url 'training'%}">Training and Matches</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{%url 'gallery'%}">Gallery</a>
@@ -79,7 +91,8 @@
               </ul>
         
             </div>
-          </nav> 
+          </nav>
+
     </header>
 
 <main role="main">

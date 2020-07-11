@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'training.apps.TrainingConfig',
     'websitetext.apps.WebsitetextConfig',
     'committee.apps.CommitteeConfig',
     'gallery.apps.GalleryConfig',

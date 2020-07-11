@@ -24,10 +24,9 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
+    path('contact/', views.contactus, name='contactus'),
+    path('supportus/', views.donate, name='donate'),
     path('about/', include('teamnews.urls')),
     path('gallery/', include('gallery.urls')),
-    path('contact/', views.contactus, name='contactus'),
-    path('practicesandfixtures/', views.pandf, name='pandf'),
-    path('emailtest/', views.contact, name='contactemailtest'),
-    path('supportus/', views.donate, name='donate'),
+    path('trainingandmatches/', include('training.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

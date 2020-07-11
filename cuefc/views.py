@@ -1,24 +1,19 @@
-from django.http import HttpResponse
-from django.shortcuts import render, get_object_or_404
+
 from teamnews.models import BlogPost
-from django.core.mail import EmailMessage, send_mail
-from websitetext.models import Training
 
-import operator
+from django.core.mail import send_mail
+from django.http import HttpResponse, HttpResponseRedirect
+from django.shortcuts import render, redirect
+from .forms import ContactForm
 
-def home(request): #request object
+from django.template.loader import get_template
+
+
+def home(request):
     posts = BlogPost.objects.order_by('-pub_date')[:3]
     
     return render(request, 'home.html', {'posts': posts})
 
-
-
-def pandf(request):
-    text = get_object_or_404(Training)
-    template = 'practicesandfixtures.html'
-    context = {'text' : text}
-    return render(request, template, context)
-    
 
 def contactus(request):
     Contact_Form = ContactForm
@@ -57,42 +52,9 @@ def donate(request):
     template = 'donate.html'
     return render(request, template)
 
-from django.core.mail import send_mail, BadHeaderError
-from django.http import HttpResponse, HttpResponseRedirect
-from django.shortcuts import render, redirect
-from .forms import ContactForm
 
 
 
-from django.template import Template
-from django.template.loader import get_template
-import os
-from django.conf import settings
 
-
-##this is the test one!
-'''
-def contact(request):
-    directory = r'cuefc\static'
-    piclist = []
-    for filename in os.listdir(directory):
-        if filename.endswith(".jpg") or filename.endswith(".png"):
-            piclist.append(filename)
-        else:
-            continue
-    
-
-
-    return render(request, 'contactemail.html', {'piclist': piclist})
-'''
-
-from websitetext.models import AboutFives
-
-
-def contact(request):
-    text = get_object_or_404(AboutFives)
-    template = 'contactemail.html' 
-    context = {'text' : text}
-    return render(request, template, context)
 
 

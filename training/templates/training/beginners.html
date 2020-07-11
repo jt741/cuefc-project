@@ -1,0 +1,27 @@
+{% extends "training/base_training.html" %}
+{%load staticfiles%}
+{% block title %}
+    <title>CUEFC - Beginners' Sessions </title>
+{% endblock %}
+
+{%block style%}
+    {{ block.super }}
+{% endblock %}
+
+
+{% block title_picture %}
+    {{ block.super }}
+{% endblock %}
+
+{% block content %}
+<div class="album py-5  container">
+
+    <h1>Beginners' Sessions</h1>
+    <hr class="featurette-divider">
+<p>
+    {{ text.Beginners }}
+</p>
+
+</div>
+
+{% endblock %}
