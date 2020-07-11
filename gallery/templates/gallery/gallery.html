@@ -1,22 +1,13 @@
+{%extends 'base.html'%}
 
-<!doctype html>
-<html lang="en">
     {%load staticfiles%}
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Jekyll v3.8.6">
-    <title>CUEFC - Club News</title>
-
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/album/">
-
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="icon" href="https://cdn.emojidex.com/emoji/px128/fleur_de_lis.png?1422536840" >
+  
+    {% block title %}
+        <title>CUEFC - Club News</title>
+    {% endblock %}
 
 
+    {% block style %}
 
     <style>
       .bd-placeholder-img {
@@ -89,45 +80,10 @@
 
     </style>
 
+{% endblock %}
+  
 
-  </head>
-  <body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light  bg-light container marketing">
-            <a class="navbar-brand" href="{%url 'home'%}" >
-                <!-- <img href="https://cdn.emojidex.com/emoji/px128/fleur_de_lis.png?1422536840" width="30" height="30" alt=""> -->
-                Cambridge University Eton Fives Club
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-        
-              <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                  <a class="nav-link" href="{%url 'home'%}">Home <span class="sr-only">(current)</span></a>
-                </li>
-
-                <li class="nav-item">
-                  <a class="nav-link" href="{%url 'allnews'%}">About</a>
-                </li>
-        
-                <li class="nav-item">
-                    <a class="nav-link" href="{%url 'pandf'%}">Practices & Fixtures</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{%url 'gallery'%}">Gallery</a>
-                </li>  
-                <li class="nav-item">
-                    <a class="nav-link" href="{%url 'contactus'%}" style="color:rgb(111, 153, 158)"><strong>Contact us</strong></a>
-                </li>  
-              </ul>
-        
-            </div>
-          </nav> 
-</header>
-
-<main role="main">
+{% block title_picture %}
 
 <div class='container text-center' style="color: white; background-image: url('/static/gals.svg'); background-size: cover;">
   <br/>
@@ -148,7 +104,9 @@
   </div>
 
 
+  {% endblock %}
 
+  {% block content %}
   <div class="album py-5  container">
     
 
@@ -159,8 +117,13 @@
 
    <div class="row " id="gallery" data-toggle="modal" data-target="#exampleModal">
     
-    <div class="col-12 col-sm-6 col-lg-3 mb-3 ">
-      <img class="w-100" src="{% static '\lightboxcrop\test_crop-022.jpg' %}" alt="First slide" data-target="#carouselExample" data-slide-to="0">
+    <div class="col-12 col-sm-6 col-lg-3 mb-3 lay ">
+      <img class="w-100 image" src="{% static '\lightboxcrop\test_crop-022.jpg' %}" alt="First slide" data-target="#carouselExample" data-slide-to="0">
+      <div class='middle'>
+        <div class='text'>
+          click to enlarge
+        </div>
+      </div>
     </div>
   
     <!--how to do overlay!! lots of css styling class=lay-->
@@ -200,13 +163,22 @@
       </div>
     </div>
     
-    <div class="col-12 col-sm-6 col-lg-3 mb-3 ">
-      <img class="w-100" src="{% static '\lightboxcrop\test_crop-028.jpg' %}" alt="First slide" data-target="#carouselExample" data-slide-to="5">
-    
+    <div class="col-12 col-sm-6 col-lg-3 mb-3 lay ">
+      <img class="w-100 image" src="{% static '\lightboxcrop\test_crop-028.jpg' %}" alt="First slide" data-target="#carouselExample" data-slide-to="5">
+      <div class='middle'>
+        <div class='text'>
+          click to enlarge
+        </div>
+      </div>
     </div>
   
-    <div class="col-12 col-sm-6 col-lg-3 mb-3">
-      <img class="w-100" src="{% static '\lightboxcrop\test_crop-029.jpg' %}" alt="First slide" data-target="#carouselExample" data-slide-to="6">
+    <div class="col-12 col-sm-6 col-lg-3 mb-3 lay">
+      <img class="w-100 image" src="{% static '\lightboxcrop\test_crop-029.jpg' %}" alt="First slide" data-target="#carouselExample" data-slide-to="6">
+      <div class='middle'>
+        <div class='text'>
+          click to enlarge
+        </div>
+      </div>
     </div>
   
     <div class="col-12 col-sm-6 col-lg-3 mb-3 lay">
@@ -320,20 +292,8 @@
 
   </div>
 
+  {%endblock%}
 
-</main>
 
-<footer class="text-muted">
-  <div class="container">
-    <p class="float-right">
-      <a href="#">Back to top</a>
-    </p> &copy; CUEFC </p>
-  </div>
-</footer>
 
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
-</body>
-</html>

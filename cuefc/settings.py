@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'websitetext.apps.WebsitetextConfig',
     'committee.apps.CommitteeConfig',
     'gallery.apps.GalleryConfig',
     'teamnews.apps.TeamnewsConfig',
@@ -127,3 +128,11 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+# email backend
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'jexi.griffins@gmail.com'
+EMAIL_HOST_PASSWORD = 'blahblahblahthisis where the email password ogessdfsfs'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True

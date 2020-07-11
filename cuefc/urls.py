@@ -29,4 +29,5 @@ urlpatterns = [
     path('contact/', views.contactus, name='contactus'),
     path('practicesandfixtures/', views.pandf, name='pandf'),
     path('emailtest/', views.contact, name='contactemailtest'),
+    path('supportus/', views.donate, name='donate'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
