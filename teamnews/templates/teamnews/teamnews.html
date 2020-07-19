@@ -7,6 +7,22 @@
 
     {%block style%}
     {{ block.super }}
+        <style>
+        .btn-outline-info {
+            color: rgba(51, 204, 204, 0.87);
+            background-color: #ffffff;
+            border-color: rgba(51, 204, 204, 0.87); /*set the color you want here*/
+            }
+
+        .btn-outline-info:hover, .btn-outline-info:focus, .btn-outline-info:active, .btn-outline-info.active, .open>.dropdown-toggle.btn-outline-info {
+            color: #fff;
+            background-color: rgba(51, 204, 204, 0.87);
+            border-color: rgba(51, 204, 204, 0.87); /*set the color you want here*/
+            }
+
+        .newslink { color: rgba(0, 0, 0);}
+        .newslink:hover { color: rgba(51, 204, 204); }
+        </style>
     {% endblock %}
 
 
@@ -22,7 +38,7 @@
        
           
   
-        <nav class="navbar navbar-light justify-content-between">
+        <nav class="navbar navbar-custom justify-content-between">
             <a class="navbar-brand"><h1>Club News</h1></a>
             <form class="form-inline" role='search' action="/about/clubnews/">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" name="q">
@@ -34,13 +50,14 @@
 
             {% if query %}
                 <div class="container">
-                <h2>searched for:  {{query}}</h2>
+                <h2>Searched for:  {{query}}</h2>
+                <a href="{% url 'teamnews' %}" class="stretched-link newslink">Show all posts again</a>
                 </div>
             {% endif %}
 
             {% for post in posts.all %}
             <div class="card mb-3" style = "width = 100%">
-              <div class="row ">
+              <div class="row" >
                 <div class="col-md-4">
                   <img src="{{post.image.url}}" class="card-img">
                 </div>
@@ -54,7 +71,7 @@
                     <p class="card-text">{{post.summary}}</p>
                     <p class="card-text">
                       <small class="text-muted">
-                        <a href="{% url 'newsdetail' post.id %}" class="stretched-link">Continue reading...</a>
+                        <a href="{% url 'newsdetail' post.id %}" class="stretched-link newslink">Continue reading...</a>
                       </small>
                     </p>
                   </div>
@@ -69,7 +86,7 @@
                 <h2>No results found</h2>
                 <p>Nothing was found matching your search: "{{query}}"
                 </br>
-                <a href="{% url 'teamnews' %}" class="stretched-link">Show all posts again</a>
+                <a href="{% url 'teamnews' %}" class="stretched-link newslink">Show all posts again</a>
                 
                 </p>
             </div>

@@ -1,179 +1,27 @@
 
-<!doctype html>
-<html lang="en">
+{% extends "teamnews/about.html" %}
     {%load staticfiles%}
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Jekyll v3.8.6">
+
+{% block title %}
     <title>CUEFC - The Committee</title>
+{% endblock %}
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/album/">
-
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="icon" href="https://cdn.emojidex.com/emoji/px128/fleur_de_lis.png?1422536840" >
-
+ {%block style%}
+    {{ block.super }}
+    {% endblock %}
 
 
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-      }
 
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-
- 
-
-    
-    </style>
+    {% block title_picture %}
+    {{ block.super }}
+    {% endblock %}
 
 
-  </head>
-  <body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light container marketing">
-            <a class="navbar-brand" href="{%url 'home'%}" >
-                <!-- <img href="https://cdn.emojidex.com/emoji/px128/fleur_de_lis.png?1422536840" width="30" height="30" alt=""> -->
-                Cambridge University Eton Fives Club
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-        
-              <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                  <a class="nav-link" href="{%url 'home'%}">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <!-- how to do dropdown
-                  <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About</a>
-                  <div class="dropdown-menu">
-                    <a class="dropdown-item" href="{%url 'about'%}">Eton Fives</a>
-                    <a class="dropdown-item" href="#">Team News</a>
-                    <a class="dropdown-item" href="#">Committee</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Sponsership</a>
-                  </div>
-                
-                </li>
-            -->
-                <li class="nav-item">
-                  <a class="nav-link" href="{%url 'about' %}">About</a>
-                </li>
-        
-                <li class="nav-item">
-                    <a class="nav-link" href="{%url 'pandf'%}">Practices & Fixtures</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{%url 'gallery'%}">Gallery</a>
-                </li>  
-                <li class="nav-item">
-                    <a class="nav-link" href="{%url 'contactus'%}" style="color:rgb(111, 153, 158)"><strong>Contact us</strong></a>
-                </li>  
-              </ul>
-        
-            </div>
-          </nav> 
-</header>
-
-<main role="main">
-<!-- 
-  <section class="jumbotron text-center container" style='background-color: transparent;'>
-    <div class="container">
-        <br/>
-        <br/>
-        <h1>About</h1>
-
-        <ul class="nav justify-content-center">
-            <li class="nav-item">
-              <a class="nav-link active" href="{%url 'about'%}">Eton Fives</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{%url 'teamnews'%}">Club News</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Committee</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Sponsership</a>
-              </li>
-          </ul>
 
 
-        
-    </div>
-
-  </section>
--->
-
-
-  <div class='container text-center' style="color: white; background-image: url('/static/cheer.svg'); background-size: cover;">
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <h1>About</h1>
-
-    <ul class="nav justify-content-center">
-        <li class="nav-item">
-          <a class="nav-link" href="{%url 'about' %}" style='color:white;'>Eton Fives</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{%url 'teamnews'%}" style='color:white;'>Club News</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{%url 'captains'%}" style='color:white;'>Meet the Captains</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="{%url 'committee'%}" style='color:white;' >Committee</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="{%url 'sponsers'%}" style='color:white;' >Sponsership</a>
-          </li>
-      </ul>
-      <br/>
-      <br/>
-    <br/>
-    <br/>
-    </div>
-     
-
-
-  <!-- how to do tabbed nav 
-  <div class='container'>
-  <ul class="nav nav-tabs justify-content-center">
-    <li class="nav-item">
-      <a class="nav-link active" href="#">Introduction</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Eton Fives at Cambridge</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">History of the Game</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link disabled" href="#">How to get involved</a>
-    </li>
-  </ul>
-</div>
--->
+   {% block content %}
 
   <div class="album py-5  container">
-    
 
  
 
@@ -232,21 +80,6 @@
     
   
   </div>
+{% endblock %}
 
 
-</main>
-
-<footer class="text-muted">
-  <div class="container">
-    <p class="float-right">
-      <a href="#">Back to top</a>
-    </p> &copy; CUEFC </p>
-  </div>
-</footer>
-
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-
-</body>
-</html>
