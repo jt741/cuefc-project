@@ -37,6 +37,9 @@ class Member(models.Model):
         id = f"{self.committee_start_year}_{self.position}_{self.first_name}_{self.second_name}"
         return id
 
+    def full_name(self):
+        return f"{self.first_name} {self.second_name}"
+
 #
 # class CommitteeCollection(models.Model):
 #     start_year = models.CharField(max_length=30, default=datetime.datetime.now().year)
