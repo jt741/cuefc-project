@@ -31,22 +31,17 @@ def teamnews(request):
     return render(request, 'teamnews/teamnews.html', context)
 
 def committee(request):
-    # return render(request, 'committee/committee.html') #idk why but it auto goes to committee even if u type teamnews!
-    sorted_members = Member.objects.all().order_by("-committee_start_year")
-    most_recent_year = sorted_members[0].committee_start_year
-    most_recent_committee = Member.objects.all().filter(committee_start_year=most_recent_year)
 
+    mens_captain = Member.objects.all().filter(position="MC").order_by("-committee_start_year")[0]
+    womens_captain = Member.objects.all().filter(position="WC").order_by("-committee_start_year")[0]
+    mens_secretary = Member.objects.all().filter(position="MS").order_by("-committee_start_year")[0]
+    womens_secretary = Member.objects.all().filter(position="WS").order_by("-committee_start_year")[0]
+    welfare_officer = Member.objects.all().filter(position="WO").order_by("-committee_start_year")[0]
+    junior_treasurer = Member.objects.all().filter(position="JT").order_by("-committee_start_year")[0]
+    social_secretary = Member.objects.all().filter(position="SS").order_by("-committee_start_year")[0]
+    webmaster = Member.objects.all().filter(position="W").order_by("-committee_start_year")[0]
 
-    mens_captain = get_object_or_404(most_recent_committee, position="MC")
-    womens_captain = get_object_or_404(most_recent_committee, position="WC")
-    mens_secretary = get_object_or_404(most_recent_committee, position="MS")
-    womens_secretary = get_object_or_404(most_recent_committee, position="WS")
-    welfare_officer = get_object_or_404(most_recent_committee, position="WO")
-    junior_treasurer = get_object_or_404(most_recent_committee, position="JT")
-    social_secretary = get_object_or_404(most_recent_committee, position="SS")
-    webmaster = get_object_or_404(most_recent_committee, position="W")
-
-    context = {
+    committee_members = {
         "mens_captain": mens_captain,
         "womens_captain": womens_captain,
         "mens_secretary": mens_secretary,
@@ -56,6 +51,18 @@ def committee(request):
         "social_secretary": social_secretary,
         "webmaster": webmaster
     }
+
+    start_years=[]
+    for value in committee_members.values():
+        start_years.append(value.committee_start_year)
+    most_recent_year = max(start_years)
+    tenure = f"{most_recent_year}-{most_recent_year+1}"
+
+    context = {
+        **committee_members,
+        "tenure": tenure
+    }
+
     return render(request, 'committee/committee.html', context=context)
 
 
@@ -67,12 +74,9 @@ def newsdetail(request, newspost_id):
     return render(request, 'teamnews/newsdetail.html', {'newspost': detailnewspost})
 
 def captains(request):
-    sorted_members = Member.objects.all().order_by("-committee_start_year")
-    most_recent_year = sorted_members[0].committee_start_year
-    most_recent_committee = Member.objects.all().filter(committee_start_year=most_recent_year)
 
-    mens_captain = get_object_or_404(most_recent_committee, position="MC")
-    womens_captain = get_object_or_404(most_recent_committee, position="WC")
+    mens_captain = Member.objects.all().filter(position="MC").order_by("-committee_start_year")[0]
+    womens_captain = Member.objects.all().filter(position="WC").order_by("-committee_start_year")[0]
 
     context = {
         "mens_captain": mens_captain,
