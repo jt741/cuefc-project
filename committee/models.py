@@ -29,9 +29,16 @@ class Member(models.Model):
     second_name = models.CharField(max_length=200)
     crsid = models.CharField(max_length=10)
     position = models.CharField(max_length=2, choices=POSITION_CHOICES, default=WEBMASTER)
-    about = models.TextField(blank=True)
-    image = models.ImageField(upload_to='images/', blank=True)
     committee_start_year = models.IntegerField(default=datetime.datetime.now().year)
+
+    #relevant for captians only
+    course = models.TextField(blank=True)
+    college = models.TextField(blank=True)
+    age = models.CharField(max_length=10, blank=True)
+    started_fives = models.TextField(blank=True)
+    about = models.TextField(blank=True)
+
+    image = models.ImageField(upload_to='images/', blank=True)
 
     def __str__(self):
         id = f"{self.committee_start_year}_{self.position}_{self.first_name}_{self.second_name}"
@@ -40,16 +47,3 @@ class Member(models.Model):
     def full_name(self):
         return f"{self.first_name} {self.second_name}"
 
-#
-# class CommitteeCollection(models.Model):
-#     start_year = models.CharField(max_length=30, default=datetime.datetime.now().year)
-#
-#     # Mens_Captain = models.ForeignKey(Member, on_delete=models.CASCADE)
-#     # Womens_Captain = models.ForeignKey(Member, on_delete=models.CASCADE)
-#     #
-#     # Mens_Secretary = models.ForeignKey(Member, on_delete=models.CASCADE, null=True)
-#     # Womens_Secretary = models.ForeignKey(Member, on_delete=models.CASCADE, null=True)
-#
-#
-#     def __str__(self):
-#         return self.start_year

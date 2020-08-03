@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from .models import BlogPost
-from websitetext.models import AboutFives
+from websitetext.models import AboutFives, Sponsors
 from django.db.models import Q
 from committee.models import Member
 
@@ -66,8 +66,11 @@ def committee(request):
     return render(request, 'committee/committee.html', context=context)
 
 
-def sponsership(request):
-    return render(request, 'teamnews/sponsership.html')
+def sponsorship(request):
+    text = get_object_or_404(Sponsors)
+    template = 'teamnews/sponsorship.html'
+    context = {'text': text}
+    return render(request, template, context)
 
 def newsdetail(request, newspost_id):
     detailnewspost = get_object_or_404(BlogPost, pk=newspost_id)

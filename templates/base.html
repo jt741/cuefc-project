@@ -1,6 +1,9 @@
 
 <!doctype html>
+
 <html lang="en">
+
+{%load staticfiles%}
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -48,13 +51,26 @@
             color: rgba(51, 204, 204, 0.87);
         }
 
-    .link { color: rgba(255, 255, 255, 0.87)} /* CSS link color (red) */
+    .link { color: rgba(255, 255, 255, 0.87)}
     .link:hover { color: rgba(51, 204, 204, 0.87) }
 
-    .newslink { color: rgba(0, 0, 0);} /* CSS link color (red) */
+    .newslink { color: rgba(0, 0, 0);}
         .newslink:hover { color: rgba(51, 204, 204); }
 
+    .funnylink { color: rgb(32, 224, 186);}
+        .funnylink:hover { color: rgba(51, 204, 204); }
 
+    .btn-outline-info {
+            color: rgba(51, 204, 204, 0.87);
+            background-color: #ffffff;
+            border-color: rgba(51, 204, 204, 0.87); /*set the color you want here*/
+            }
+
+        .btn-outline-info:hover, .btn-outline-info:focus, .btn-outline-info:active, .btn-outline-info.active, .open>.dropdown-toggle.btn-outline-info {
+            color: #fff;
+            background-color: rgba(51, 204, 204, 0.87);
+            border-color: rgba(51, 204, 204, 0.87); /*set the color you want here*/
+            }
 
       
     </style>

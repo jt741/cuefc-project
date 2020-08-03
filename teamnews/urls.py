@@ -5,7 +5,7 @@ urlpatterns = [
     path('', views.allnews, name='about'),
     path('clubnews/', views.teamnews, name='teamnews'),
     path('committee/', views.committee, name='committee'),
-    path('sponsership/', views.sponsership, name='sponsers'),
+    path('sponsorship/', views.sponsorship, name='sponsors'),
     path('<int:newspost_id>/', views.newsdetail, name='newsdetail'),
     path('thecaptains/', views.captains, name='captains')
 ]

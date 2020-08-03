@@ -17,9 +17,13 @@ from django.contrib import admin
 from django.urls import path, include
 from . import views
 from django.conf import settings
-from django.conf.urls.static import static 
+from django.conf.urls.static import static
 
 
+
+admin.site.site_header = "CUEFC Admin"
+admin.site.site_title = "CUEFC Admin Portal"
+admin.site.index_title = "Welcome to the CUEFC Admin Page"
 
 urlpatterns = [
     path('admin/', admin.site.urls),

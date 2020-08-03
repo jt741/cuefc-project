@@ -47,7 +47,8 @@
   height: 100%;
 }
 
-
+.underline_link { color: rgba(255, 255, 255, 0.87)}
+    .underline_link:hover { text-decoration: underline; }
     </style>
 
 
@@ -69,13 +70,13 @@
 
     <ul class="nav justify-content-center">
         <li class="nav-item">
-          <a class="nav-link" href="{%url 'training'%}" style='color:white;'>Club Training</a>
+          <a class="nav-link underline_link" href="{%url 'training'%}" style='color:white;'>Club Training</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{%url 'beginners'%}" style='color:white;'>Beginners' Sessions</a>
+          <a class="nav-link underline_link" href="{%url 'beginners'%}" style='color:white;'>Beginners' Sessions</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{%url 'calendar'%}" style='color:white;'>Match Calendar</a>
+          <a class="nav-link underline_link" href="{%url 'calendar'%}" style='color:white;'>Match Calendar</a>
         </li>
       </ul>
 

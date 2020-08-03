@@ -1,9 +1,9 @@
 
 from teamnews.models import BlogPost
-
+from websitetext.models import SupportTheClub
 from django.core.mail import send_mail
 from django.http import HttpResponse, HttpResponseRedirect
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .forms import ContactForm
 
 from django.template.loader import get_template
@@ -39,8 +39,8 @@ def contactus(request):
             send_mail(
                 'CUEFC website message',
                 content,
-                'jexi.griffins@gmail.com',
-                ['denoxeh463@qortu.com'],
+                'cuetonfives@gmail.com',
+                ['cuetonfives@gmail.com'],
                 fail_silently=False
             )
 
@@ -49,8 +49,10 @@ def contactus(request):
     return render(request, 'contact.html', {'successful_submit': ss})
 
 def donate(request):
+    text = get_object_or_404(SupportTheClub)
     template = 'donate.html'
-    return render(request, template)
+    context = {'text': text}
+    return render(request, template, context)
 
 
 

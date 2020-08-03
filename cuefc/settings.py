@@ -133,7 +133,13 @@ MEDIA_URL = '/media/'
 # email backend
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'jexi.griffins@gmail.com'
+EMAIL_HOST_USER = 'cuetonfives@gmail.com'
 EMAIL_HOST_PASSWORD = ''
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
+
+
+try:
+    from .local_settings import *   #this will overwrite everything bc at bottom of code!
+except ImportError:
+    pass

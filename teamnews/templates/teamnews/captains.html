@@ -6,6 +6,18 @@
    
     {%block style%}
     {{ block.super }}
+        <style>
+        .center {
+          text-align: center;
+        }
+
+        @media screen and (max-width: 600px) {
+            .column {
+            width: 100%;
+            }
+
+}
+        </style>
     {% endblock %}
 
 
@@ -19,19 +31,41 @@
     {% block content %}
 
   <div class="album py-5  container">
-    <hr class="featurette-divider">
-    <div class="container">
-      <h1>Meet the Captains</h1>
-      <div class='row'> 
-        <div class='col-sm'>
-          <h3> <span class="text-muted"> Men's Captain </span></h3>
-          <p> {{ mens_captain.full_name }} </p>
-        </div>
-  
-        <div class='col-sm'>
-          <h3> <span class="text-muted"> Ladies's Captain </span></h3>
-          <p> {{ womens_captain.full_name }}</p>
-        </div>
+
+        <div class="container">
+            <h1>Meet the Captains</h1>
+            <hr class="featurette-divider">
+            <div class='row'>
+                <div class='col-sm center column'>
+                    <h3> <span class="text-muted"> Men's Captain </span></h3>
+                    <h4> {{ mens_captain.full_name }} </h4>
+                    <img src="{{ mens_captain.image.url }}" style="max-width: 100%"/> </br>
+                    <i> Course: {{ mens_captain.course }} </br>
+                    College: {{ mens_captain.college }} </br>
+                    Age: {{ mens_captain.age }} </br>
+                    Started Fives: {{ mens_captain.started_fives }} </br> </i>
+
+                    <hr class="featurette-divider">
+
+                    {{ mens_captain.about|linebreaks }}
+
+                </div>
+
+                <div class='col-sm center column'>
+                    <h3> <span class="text-muted"> Women's Captain </span></h3>
+                    <h4> {{ womens_captain.full_name }}</h4>
+
+                    <img src="{{ womens_captain.image.url }}" style="max-width: 100%"/> </br>
+
+                    <i>Course: {{ womens_captain.course }} </br>
+                    College: {{ womens_captain.college }} </br>
+                    Age: {{ womens_captain.age }}  </br>
+                    Started Fives: {{ womens_captain.started_fives }} </br> </i>
+
+                    <hr class="featurette-divider">
+
+                    {{ womens_captain.about|linebreaks }}
+                </div>
 
       </div>
 

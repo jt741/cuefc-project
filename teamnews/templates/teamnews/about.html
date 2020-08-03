@@ -8,6 +8,13 @@
     
     {%block style%}
     {{ block.super }}
+
+        <style>
+
+    .underline_link { color: rgba(255, 255, 255, 0.87)}
+    .underline_link:hover { text-decoration: underline; }
+
+        </style>
     {% endblock %}
     
     {% block title_picture %}
@@ -20,23 +27,25 @@
     <br/>
     <h1>About</h1>
 
-    <ul class="nav justify-content-center">
+    <ul class="nav justify-content-center" id="huh">
         <li class="nav-item">
-          <a class="nav-link active" href="{%url 'about' %}" style='color:white;'>Eton Fives</a>
+          <a class="nav-link underline_link" href="{%url 'about' %}" style='color:white;'>Eton Fives</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{%url 'teamnews'%}" style='color:white;'>Club News</a>
+          <a class="nav-link underline_link" href="{%url 'teamnews'%}" style='color:white;'>Club News</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{%url 'captains'%}" style='color:white;'>Meet the Captains</a>
+          <a class="nav-link underline_link" href="{%url 'captains'%}" style='color:white;'>Meet the Captains</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{%url 'committee'%}" style='color:white;' >Committee</a>
+          <a class="nav-link underline_link" href="{%url 'committee'%}" style='color:white;' >Committee</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="{%url 'sponsers'%}" style='color:white;' >Sponsership</a>
+            <a class="nav-link underline_link" href="{%url 'sponsors'%}" style='color:white;' >Sponsorship</a>
           </li>
       </ul>
+
+
       <br/>
       <br/>
     <br/>

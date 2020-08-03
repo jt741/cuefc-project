@@ -1,4 +1,31 @@
 {% extends 'base.html' %}
+ {%load staticfiles%}
+
+{% block style %}
+    {{ block.super }}
+    <style>
+     .btn-bold {
+            color: rgb(255, 255, 255);
+            background-color: rgba(51, 204, 204, 0.87);
+            border-color: #ffffff; /*set the color you want here*/
+            display: flex;
+         align-items: center;
+         justify-content: center;
+         {#float: right;#}
+            }
+
+        .btn-bold:hover, .btn-bold:focus, .btn-bold:active, .btn-bold.active, .open>
+        .dropdown-toggle.btn-bold {
+            {#color: rgba(51, 204, 204, 0.87);#}
+            {#background-color: #ffffff;#}
+            color: rgb(255, 255, 255);
+            background-color: rgba(51, 204, 204, 0.87);
+            border-color: rgba(51, 204, 204, 0.87); /*set the color you want here*/
+            }
+
+        </style>
+
+{% endblock %}
 
 {% block title_picture %}
 
@@ -24,8 +51,38 @@
   {% endblock %}
 
 {%block content%}
-<div class="container">
-donate here!!! pls! thanks
-this page will eventually look like the swimming one, and link to the donate portal.
+<div class="album py-5  container">
+
+    <h1>
+
+        Support Us
+
+        <a class="btn btn-bold" href="{{ text.DonationLink }}" style="float: right"><h4>Donate Here</h4></a>
+    </h1>
+    <hr class="featurette-divider">
+    
+    <h3>The Club needs your help!</h3>
+    <p> Please see this <a class="funnylink" href = "{{ text.DonationLink }}" target="_blank">link</a> to donate to the
+        club
+        through Cambridge
+        University's philanthropy portal </p>
+
+    <h3> Our story and goals: </h3>
+<p>
+    {{ text.PlsDonate_intro|linebreaks }}
+</p>
+
+<img src="{% static '\lightboxcrop\test_crop-022.jpg' %}" width="100%"/>
+
+<p>
+    {{ text.PlsDonate_middle|linebreaks }}
+</p>
+
+
+<p>
+    {{ text.PlsDonate_end|linebreaks }}
+</p>
+
+<a class="btn btn-bold" href="{{ text.DonationLink }}" ><h4>Support the Club</h4></a>
 </div>
 {% endblock %}
