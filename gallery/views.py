@@ -1,8 +1,9 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Album
+from .models import NewAlbum, NewAlbumPhoto
 # Create your views here.
 
 def gallery(request):
-    albums = Album.objects
-    return render(request, 'gallery/gallery.html', {'albums': albums})
+    albums = NewAlbum.objects.all()
+    photos = NewAlbumPhoto.objects.all()
+    return render(request, 'gallery/gallery.html', {"albums": albums, "photos": photos})
 
