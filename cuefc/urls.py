@@ -27,7 +27,7 @@ admin.site.index_title = "Welcome to the CUEFC Admin Page"
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home, name='home'),
+    path('index.html/', views.home, name='home'),
     path('contact/', views.contactus, name='contactus'),
     path('supportus/', views.donate, name='donate'),
     path('about/', include('teamnews.urls')),
