@@ -6,7 +6,13 @@
         {% endblock %}
         
         {%block style%}
+
         {{ block.super }}
+            <style>
+            .aligncenter{
+            text-align: center;
+            }
+            </style>
         {% endblock %}
   
         {% block content %}
@@ -19,7 +25,9 @@
         <h1 class='text-center'>{{newspost.title}}</h1>
             <p class='text-center'>{{newspost.pub_date_pretty}}</p>
             <hr />  <!-- This adds a line break thingy -->
+            <p class="aligncenter">
             <img class='img-fluid' src='{{newspost.image.url}}' />
+                </p>
             <br />
             <br />
             <p>{{newspost.body|linebreaks}}</p>
