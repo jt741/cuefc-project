@@ -56,7 +56,7 @@ def committee(request):
     for value in committee_members.values():
         start_years.append(value.committee_start_year)
     most_recent_year = max(start_years)
-    tenure = f"{most_recent_year}-{most_recent_year+1}"
+    tenure = str(most_recent_year) + "-" + str(most_recent_year +1)
 
     context = {
         **committee_members,

@@ -41,9 +41,10 @@ class Member(models.Model):
     image = models.ImageField(upload_to='images/', blank=True)
 
     def __str__(self):
-        id = f"{self.committee_start_year}_{self.position}_{self.first_name}_{self.second_name}"
+        id = str(self.committee_start_year) + "_" + self.position + "_" + self.first_name + "_" + self.second_name
         return id
 
     def full_name(self):
-        return f"{self.first_name} {self.second_name}"
+        full_name = self.first_name + " " + self.second_name
+        return full_name
 

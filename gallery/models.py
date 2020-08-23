@@ -28,5 +28,9 @@ class NewAlbumPhoto(models.Model):
         This is how to show the name up in the admin page
         '''
         #edit this so u have an underscore u silllyyyy
-        name = f"{self.NewAlbum.nospace()}_{self.light_box_index}"
+        nospace = self.NewAlbum.nospace()
+        index = str(self.light_box_index)
+
+        name = nospace + "_" + index
+        # name = f"{self.NewAlbum.nospace()}_{self.light_box_index}" bloody server doesn't use 3.6
         return name
