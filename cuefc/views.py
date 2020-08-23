@@ -1,6 +1,6 @@
 
 from teamnews.models import BlogPost
-from websitetext.models import SupportTheClub
+from websitetext.models import SupportTheClub, Donors
 from django.core.mail import send_mail
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect, get_object_or_404
@@ -17,6 +17,7 @@ def home(request):
 
 def contactus(request):
     Contact_Form = ContactForm
+    NewsLetterLink = get_object_or_404(Donors)
     ss = False 
     if request.method == 'POST':
         form = Contact_Form(data=request.POST)
@@ -46,7 +47,7 @@ def contactus(request):
 
             ss = True
 
-    return render(request, 'contact.html', {'successful_submit': ss})
+    return render(request, 'contact.html', {'successful_submit': ss, "NewsLetterLink": NewsLetterLink})
 
 def donate(request):
     text = get_object_or_404(SupportTheClub)

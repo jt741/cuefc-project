@@ -11,7 +11,8 @@ class Training(models.Model):
     Beginners = models.TextField(default="type text here")
     CalendarLink = models.TextField(default="this is the link to the match calendar")
 
-
+class Donors(models.Model):
+    SignUpForNewsLetter = models.TextField(default="this is the link to the google form to sign up")
 
 class SupportTheClub(models.Model):
     # this is the bit about the donation portal!!!

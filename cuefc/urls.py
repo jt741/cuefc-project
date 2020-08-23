@@ -33,4 +33,5 @@ urlpatterns = [
     path('about/', include('teamnews.urls')),
     path('gallery/', include('gallery.urls')),
     path('trainingandmatches/', include('training.urls')),
+    path('donors/', views.contactus, name='contactus'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
