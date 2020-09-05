@@ -1,0 +1,79 @@
+{% extends "teamnews/about.html" %}
+    {%load staticfiles%}
+    {% block title %}
+    <title>CUEFC - Documents</title>
+    {% endblock %}
+
+    {%block style%}
+    {{ block.super }}
+        <style>
+        .center {
+          text-align: center;
+        }
+
+        @media screen and (max-width: 600px) {
+            .column {
+            width: 100%;
+            }
+
+}
+        </style>
+    {% endblock %}
+
+
+
+    {% block title_picture %}
+    {{ block.super }}
+    {% endblock %}
+
+
+
+    {% block content %}
+
+  <div class="album py-5  container">
+
+        <div class="container">
+            <h1>Club Documents {{ tenure }}</h1>
+            <hr class="featurette-divider">
+
+            <div class="col">
+
+                <a href="{{ SAFETY.file.url }}">CUEFC Safety Statement</a>
+
+            </div>
+
+            <div class="col">
+
+                <a href="{{ WELFARE.file.url }}">CUEFC Welfare Policy</a>
+
+            </div>
+
+            <div class="col">
+
+                <a href="{{ PRIVACY.file.url }}">CUEFC Privacy Notice Statement</a>
+
+            </div>
+
+        <div class="col">
+
+                <a href="{{ CONDUCT.file.url }}">CUEFC Code of Conduct</a>
+
+            </div>
+
+        <div class="col">
+
+                <a href="{{ CONSTITUTION.file.url }}">CUEFC Constitution</a>
+
+            </div>
+
+
+
+
+
+        </div>
+
+    <hr class="featurette-divider">
+
+    {% endblock %}
+
+

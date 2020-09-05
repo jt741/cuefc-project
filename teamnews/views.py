@@ -1,10 +1,41 @@
 from django.shortcuts import render, get_object_or_404
-from .models import BlogPost
+from .models import BlogPost, Document
 from websitetext.models import AboutFives, Sponsors
 from django.db.models import Q
 from committee.models import Member
 
 # Create your views here.
+def docs(request):
+    SAFETY = Document.objects.all().filter(doc="SAFETY").order_by("-start_year")[0]
+    WELFARE = Document.objects.all().filter(doc="WELFARE").order_by("-start_year")[0]
+    PRIVACY = Document.objects.all().filter(doc="PRIVACY").order_by("-start_year")[0]
+    CONDUCT = Document.objects.all().filter(doc="CONDUCT").order_by("-start_year")[0]
+    CONSTITUTION = Document.objects.all().filter(doc="CONSTITUTION").order_by("-start_year")[0]
+
+    template = 'teamnews/documents.html'
+    documents = {
+        "SAFETY": SAFETY,
+        "WELFARE": WELFARE,
+        "PRIVACY": PRIVACY,
+        "CONDUCT": CONDUCT,
+        "CONSTITUTION": CONSTITUTION
+    }
+
+    start_years = []
+    for value in documents.values():
+        start_years.append(value.start_year)
+    most_recent_year = max(start_years)
+    tenure = str(most_recent_year) + "-" + str(most_recent_year + 1)
+
+    context = {
+        **documents,
+        "tenure": tenure
+    }
+
+    return render(request, template, context)
+
+
+
 def allnews(request):
     text = get_object_or_404(AboutFives)
     template = 'teamnews/about.html'

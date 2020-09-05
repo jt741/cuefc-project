@@ -7,5 +7,6 @@ urlpatterns = [
     path('committee/', views.committee, name='committee'),
     path('sponsorship/', views.sponsorship, name='sponsors'),
     path('<int:newspost_id>/', views.newsdetail, name='newsdetail'),
-    path('thecaptains/', views.captains, name='captains')
+    path('thecaptains/', views.captains, name='captains'),
+    path('docs/', views.docs, name='docs'),
 ]
