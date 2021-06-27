@@ -57,7 +57,7 @@ cover;">
 
 <p>Please feel free to contact us at <a href = "mailto: cuetonfives@gmail.com">cuetonfives@gmail.com</a> if you have
     any
-    questions about the club. You can also send us a message using this form below and we will get back to you as soon as possible.
+    questions about the club. Please also feel free to contact the captains.
 
 </p>
 <p>
@@ -66,55 +66,7 @@ cover;">
 
 </p>
 
-<form method='POST'> 
-  {% csrf_token %}
-  
-  <div class="form-group">
-      <label for="exampleInputPassword1">Your Name</label>
-      <input name='contact_name' required="required" placeholder="Alex Bloggs" type="text" class="form-control" id="exampleInputPassword1">
-  </div>
 
-<div class="form-group">
-  <label for="exampleInputEmail1">Your Email address</label>
-  <input name='contact_email' required="required"  placeholder="alexbloggs@gmail.com" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-</div>
-
-<div class="form-group">
-  <label for="exampleInputPassword1">Your Message</label>
-  <textarea name='content' required="required"  type="text" class="form-control" id="exampleInputPassword1" rows=5 ></textarea>
-  
-  <small id="passwordHelpBlock" class="form-text text-muted">
-      You can adjust the size of this box!
-    </small>  
-</div>
-
-
-<button type="submit" class="btn btn-outline-info" >Submit</button>
-
-
-</form>
-
-
-
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-<div class="modal-dialog">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h5 class="modal-title" id="exampleModalLabel">Successfully sent</h5>
-      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
-    <div class="modal-body">
-      Thank you for your message; we will get back to you via the email address you filled in as soon as possible!
-    </div>
-    <div class="modal-footer">
-      <button type="button" class="btn btn-outline-info " data-dismiss="modal">Close</button>
-    </div>
-  </div>
-</div>
-</div>
 
 </div>
 
@@ -124,12 +76,3 @@ cover;">
 {%endblock%}
 
 
-{% block java %}
-{% if successful_submit %}
-<script type="text/javascript">
-$(document).ready(function(){
-  $("#exampleModal").modal('show');
-});
-</script>
-{% endif %}
-{%endblock%}
