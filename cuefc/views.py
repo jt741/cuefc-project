@@ -18,6 +18,7 @@ def home(request):
 def contactus(request):
     Contact_Form = ContactForm
     NewsLetterLink = get_object_or_404(Donors)
+    Signup_Form = "https://forms.gle/y7H4qamYXSZW9orE8"
     ss = False 
     if request.method == 'POST':
         form = Contact_Form(data=request.POST)
@@ -47,7 +48,7 @@ def contactus(request):
 
             ss = True
 
-    return render(request, 'contact.html', {'successful_submit': ss, "NewsLetterLink": NewsLetterLink})
+    return render(request, 'contact.html', {'successful_submit': ss, "NewsLetterLink": NewsLetterLink, "SignupForm": Signup_Form})
 
 def donate(request):
     text = get_object_or_404(SupportTheClub)
