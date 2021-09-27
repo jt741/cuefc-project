@@ -11,8 +11,9 @@ from django.template.loader import get_template
 
 def home(request):
     posts = BlogPost.objects.order_by('-pub_date')[:3]
+    Signup_Form = "https://forms.gle/y7H4qamYXSZW9orE8"
     
-    return render(request, 'home.html', {'posts': posts})
+    return render(request, 'home.html', {'posts': posts, "SignupForm": Signup_Form})
 
 
 def contactus(request):

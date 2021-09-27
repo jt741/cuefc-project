@@ -27,7 +27,25 @@
         .newslink { color: rgba(0, 0, 0);} /* CSS link color (red) */
         .newslink:hover { color: rgba(51, 204, 204); }
 
+        .banner {
+          background-color: #eff5f8;
+          text-align: center;
+          height: 60px
+        }
+        .banner-text {
+          font-size: 20px;
+          font-weight: bold;
+          margin: auto;
+          padding-top: 15px;
+        }
+
         </style>
+{% endblock %}
+
+{% block banner %}
+  <div class="banner container">
+    <p class="banner-text">Register your interest in joining <a class="banner-link" href="{{ SignupForm }}">now!</a></p>
+  </div>
 {% endblock %}
 
 
@@ -35,7 +53,7 @@
 
 {% block title_picture %}
     
-    <div id="myCarousel" class="carousel slide container " data-ride="carousel">
+    <div id="myCarousel" class="carousel slide container" data-ride="carousel">
         <ol class="carousel-indicators">
           <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
           <li data-target="#myCarousel" data-slide-to="1"></li>
